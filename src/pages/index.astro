@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '@components/Header.astro';
+import SectionWrapper from '@components/SectionWrapper.astro';
+import HomeSection from '@components/HomeSection.astro';
+import { Sections } from '@models/sections.model.ts';
+---
+
+<Layout title="Portfolio de Matias Gonta - Desarrollador y programador Web">
+	<main class="mx-auto w-full max-w-[calc(100%-2rem)] text-white text-[16px] leading-normal">
+		<Header />
+		<SectionWrapper id={Sections.HOME}>
+			<HomeSection />
+		</SectionWrapper>
+	</main>
+</Layout>
