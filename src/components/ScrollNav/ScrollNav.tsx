@@ -1,7 +1,7 @@
 import React from 'react';
 import { Sections } from '@models/sections.model.ts';
 
-interface ScrollNavInterface {}
+interface ScrollNavInterface { }
 
 const ScrollNav: React.FC<ScrollNavInterface> = () => {
   const navCircles = [
