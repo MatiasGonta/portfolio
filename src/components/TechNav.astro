@@ -1,0 +1,106 @@
+---
+import JavaScriptIcon from "@icons/JavaScript.icon.astro";
+import TypeScriptIcon from "@icons/TypeScript.icon.astro";
+import GitIcon from '@icons/Git.icon.astro';
+import HtmlIcon from "@icons/Html.icon.astro";
+import CssIcon from "@icons/Css.icon.astro";
+import SassIcon from "@icons/Sass.icon.astro";
+import TailwindIcon from "@icons/Tailwind.icon.astro";
+import AstroIcon from "@icons/Astro.icon.astro";
+import ReactIcon from "@icons/React.icon.astro";
+import ReduxIcon from "@icons/Redux.icon.astro";
+import NodeJSIcon from "@icons/NodeJS.icon.astro";
+import ExpressIcon from "@icons/Express.icon.astro";
+import MongoDBIcon from "@icons/MongoDB.icon.astro";
+import NextjsIcon from "@icons/Nextjs.icon.astro";
+
+const technologies = [
+    {
+        name: "JavaScript",
+        class: "hover:border-[#f7df1e] hover:text-[#f7df1e]",
+        icon: JavaScriptIcon,
+    },
+    {
+        name: "TypeScript",
+        class: "hover:border-[#3178c6] hover:text-[#3178c6]",
+        icon: TypeScriptIcon,
+    },
+    {
+        name: "GIT",
+        class: "hover:border-[#f05032] hover:text-[#f05032]",
+        icon: GitIcon,
+    },
+    {
+        name: "HTML",
+        class: "hover:border-[#e34f26] hover:text-[#e34f26]",
+        icon: HtmlIcon,
+    },
+    {
+        name: "CSS",
+        class: "hover:border-[#1572b6] hover:text-[#1572b6]",
+        icon: CssIcon,
+    },
+    {
+        name: "Sass",
+        class: "hover:border-[#cc6699] hover:text-[#cc6699]",
+        icon: SassIcon,
+    },
+    {
+        name: "Tailwind CSS",
+        class: "hover:border-[#06b6d4] hover:text-[#06b6d4]",
+        icon: TailwindIcon,
+    },
+    {
+        name: "Astro",
+        class: "hover:border-[#bc52ee] hover:text-[#bc52ee]",
+        icon: AstroIcon,
+    },
+    {
+        name: "React",
+        class: "hover:border-[#61dafb] hover:text-[#61dafb]",
+        icon: ReactIcon,
+    },
+    {
+        name: "Redux",
+        class: "hover:border-[#764abc] hover:text-[#764abc]",
+        icon: ReduxIcon,
+    },
+    {
+        name: "NodeJS",
+        class: "hover:border-[#339933] hover:text-[#339933]",
+        icon: NodeJSIcon,
+    },
+    {
+        name: "Express",
+        class: "hover:border-[#404040] hover:text-[#404040]",
+        icon: ExpressIcon,
+    },
+    {
+        name: "MongoDB",
+        class: "hover:border-[#47a248] hover:text-[#47a248]",
+        icon: MongoDBIcon,
+    },
+    {
+        name: "Nextjs",
+        class: "hover:border-[#404040] hover:text-[#404040]",
+        icon: NextjsIcon,
+    },
+];
+---
+
+<nav class="flex justify-center items-center">
+    <ul class="grid gap-5 grid-cols-[repeat(7,85px)] grid-rows-auto">
+        {
+            technologies.map((tech) => (
+                <li class="inline w-fit h-fit">
+                    <div class={`transition-all duration-300 cursor-pointer flex flex-col justify-center items-center size-[85px] select-none border border-white rounded-xl text-white ${tech.class}`}>
+                        <div class="size-[25px]">
+                            <tech.icon />
+                        </div>
+                        <span class="text-[12px]">{tech.name}</span>
+                    </div>
+                </li>
+            ))
+        }
+    </ul>
+</nav>

@@ -5,6 +5,7 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@models/*": ["src/models/*"],
+      "@icons/*": ["src/icons/*"],
     }
   }
 }
