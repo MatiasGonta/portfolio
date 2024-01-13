@@ -1,6 +1,5 @@
 ---
 import '@fontsource-variable/onest';
-import ScrollNav from "@components/ScrollNav/ScrollNav.tsx";
 interface Props {
 	title: string;
 }
@@ -14,17 +13,13 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+		<link rel="icon" type="image/icon" href="/public/assets/profile-photo.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-		<!-- <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> -->
 		<!-- Background -->
-		<div class="absolute top-0 z-[-2] size-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(119,158,198,0.3),rgba(255,255,255,0))]"></div>
-		
-		<!-- ScrollNav -->
-		<ScrollNav />
+		<div class="absolute top-0 z-[-2] w-screen h-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(119,158,198,0.3),rgba(255,255,255,0))]"></div>
 		<slot />
 	</body>
 </html>
@@ -35,8 +30,10 @@ const { title } = Astro.props;
 	html {
 		font-family: 'Onest Variable', system-ui, sans-serif;
 		background-color: #13151a;
+		scroll-behavior: smooth;
 	}
 	body {
 		overflow-x: hidden;
+		list-style: none;
 	}
 </style>

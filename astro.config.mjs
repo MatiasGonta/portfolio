@@ -4,6 +4,9 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
+  static: {
+    directory: 'assets'
+  },
   integrations: [tailwind(), react()],
   output: 'hybrid'
 });

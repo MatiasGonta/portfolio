@@ -1,42 +1,43 @@
 ---
-import { Sections } from '@models/sections.model.ts';
+import { Sections } from "@models/sections";
+
+type HeaderLink = {
+    name: string;
+    href: Sections;
+}
+
+const headerLinks: HeaderLink[] = [
+    {
+        name: 'Inicio',
+        href: Sections.HOME,
+    },
+    {
+        name: 'Proyectos',
+        href: Sections.PROJECTS,
+    },
+    {
+        name: 'Sobre mi',
+        href: Sections.ABOUT,
+    },
+    {
+        name: 'Contacto',
+        href: Sections.CONTACT,
+    }
+];
 ---
 
 <header class="w-full h-[75px]">
     <nav class="size-full max-w-[500px] mx-auto">
         <ul class="size-full flex justify-between items-center">
-            <li>
-                <a 
-                    class="transition-color duration-300 hover:text-primary-light"
-                    href=`#${Sections.HOME}`
-                >
-                    Inicio
-                </a>
-            </li>
-            <li>
-                <a 
-                    class="transition-color duration-300 hover:text-primary-light"
-                    href=`#${Sections.ABOUT}`
-                >
-                    Sobre mi
-                </a>
-            </li>
-            <li>
-                <a 
-                    class="transition-color duration-300 hover:text-primary-light"
-                    href=`#${Sections.PROJECTS}`
-                >
-                    Proyectos
-                </a>
-            </li>
-            <li>
-                <a 
-                    class="transition-color duration-300 hover:text-primary-light"
-                    href=`#${Sections.CONTACT}`
-                >
-                    Contactos
-                </a>
-            </li>
+            {
+                headerLinks.map(({ name, href }) => (
+                    <li>
+                        <a href={`#${href}`} class="transition-color duration-300 hover:text-primary-light">
+                            {name}
+                        </a>
+                    </li>
+                ))
+            }
         </ul>
     </nav>
 </header>

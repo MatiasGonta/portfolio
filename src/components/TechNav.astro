@@ -1,88 +1,89 @@
 ---
-import JavaScriptIcon from "@icons/JavaScript.icon.astro";
-import TypeScriptIcon from "@icons/TypeScript.icon.astro";
-import GitIcon from '@icons/Git.icon.astro';
-import HtmlIcon from "@icons/Html.icon.astro";
-import CssIcon from "@icons/Css.icon.astro";
-import SassIcon from "@icons/Sass.icon.astro";
-import TailwindIcon from "@icons/Tailwind.icon.astro";
-import AstroIcon from "@icons/Astro.icon.astro";
-import ReactIcon from "@icons/React.icon.astro";
-import ReduxIcon from "@icons/Redux.icon.astro";
-import NodeJSIcon from "@icons/NodeJS.icon.astro";
-import ExpressIcon from "@icons/Express.icon.astro";
-import MongoDBIcon from "@icons/MongoDB.icon.astro";
-import NextjsIcon from "@icons/Nextjs.icon.astro";
+import JavaScriptIcon from "@icons/tech/JavaScript.icon.astro";
+import TypeScriptIcon from "@icons/tech/TypeScript.icon.astro";
+import GitIcon from '@icons/tech/Git.icon.astro';
+import HtmlIcon from "@icons/tech/Html.icon.astro";
+import CssIcon from "@icons/tech/Css.icon.astro";
+import SassIcon from "@icons/tech/Sass.icon.astro";
+import TailwindIcon from "@icons/tech/Tailwind.icon.astro";
+import AstroIcon from "@icons/tech/Astro.icon.astro";
+import ReactIcon from "@icons/tech/React.icon.astro";
+import ReduxIcon from "@icons/tech/Redux.icon.astro";
+import NodeJSIcon from "@icons/tech/NodeJS.icon.astro";
+import ExpressIcon from "@icons/tech/Express.icon.astro";
+import MongoDBIcon from "@icons/tech/MongoDB.icon.astro";
+import NextjsIcon from "@icons/tech/Nextjs.icon.astro";
+import { Technologies } from "@models/technologies";
 
 const technologies = [
     {
-        name: "JavaScript",
-        class: "hover:border-[#f7df1e] hover:text-[#f7df1e]",
+        name: Technologies.JAVASCRIPT,
+        class: "hover:border-javascript hover:text-javascript",
         icon: JavaScriptIcon,
     },
     {
-        name: "TypeScript",
-        class: "hover:border-[#3178c6] hover:text-[#3178c6]",
+        name: Technologies.TYPESCRIPT,
+        class: "hover:border-typescript hover:text-typescript",
         icon: TypeScriptIcon,
     },
     {
-        name: "GIT",
-        class: "hover:border-[#f05032] hover:text-[#f05032]",
+        name: Technologies.GIT,
+        class: "hover:border-git hover:text-git",
         icon: GitIcon,
     },
     {
-        name: "HTML",
-        class: "hover:border-[#e34f26] hover:text-[#e34f26]",
+        name: Technologies.HTML,
+        class: "hover:border-html hover:text-html",
         icon: HtmlIcon,
     },
     {
-        name: "CSS",
-        class: "hover:border-[#1572b6] hover:text-[#1572b6]",
+        name: Technologies.CSS,
+        class: "hover:border-css hover:text-css",
         icon: CssIcon,
     },
     {
-        name: "Sass",
-        class: "hover:border-[#cc6699] hover:text-[#cc6699]",
+        name: Technologies.SASS,
+        class: "hover:border-sass hover:text-sass",
         icon: SassIcon,
     },
     {
-        name: "Tailwind CSS",
-        class: "hover:border-[#06b6d4] hover:text-[#06b6d4]",
+        name: Technologies.TAILWIND,
+        class: "hover:border-tailwindcss hover:text-tailwindcss",
         icon: TailwindIcon,
     },
     {
-        name: "Astro",
-        class: "hover:border-[#bc52ee] hover:text-[#bc52ee]",
+        name: Technologies.ASTRO,
+        class: "hover:border-astro hover:text-astro",
         icon: AstroIcon,
     },
     {
-        name: "React",
-        class: "hover:border-[#61dafb] hover:text-[#61dafb]",
+        name: Technologies.REACT,
+        class: "hover:border-react hover:text-react",
         icon: ReactIcon,
     },
     {
-        name: "Redux",
-        class: "hover:border-[#764abc] hover:text-[#764abc]",
+        name: Technologies.REDUX,
+        class: "hover:border-redux hover:text-redux",
         icon: ReduxIcon,
     },
     {
-        name: "NodeJS",
-        class: "hover:border-[#339933] hover:text-[#339933]",
+        name: Technologies.NODE,
+        class: "hover:border-node hover:text-node",
         icon: NodeJSIcon,
     },
     {
-        name: "Express",
-        class: "hover:border-[#404040] hover:text-[#404040]",
+        name: Technologies.EXPRESS,
+        class: "hover:border-express hover:text-express",
         icon: ExpressIcon,
     },
     {
-        name: "MongoDB",
-        class: "hover:border-[#47a248] hover:text-[#47a248]",
+        name: Technologies.MONGODB,
+        class: "hover:border-mongodb hover:text-mongodb",
         icon: MongoDBIcon,
     },
     {
-        name: "Nextjs",
-        class: "hover:border-[#404040] hover:text-[#404040]",
+        name: Technologies.NEXTJS,
+        class: "hover:border-nextjs hover:text-nextjs",
         icon: NextjsIcon,
     },
 ];
@@ -97,7 +98,7 @@ const technologies = [
                         <div class="size-[25px]">
                             <tech.icon />
                         </div>
-                        <span class="text-[12px]">{tech.name}</span>
+                        <span class="text-[12px] mt-1">{tech.name}</span>
                     </div>
                 </li>
             ))
