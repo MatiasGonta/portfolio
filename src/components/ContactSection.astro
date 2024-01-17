@@ -1,6 +1,10 @@
 ---
 import ContactIcon from '@icons/section/Contact.icon.astro';
 import SocialBanner from './SocialBanner.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <article class="px-7 lg:px-0">
@@ -8,7 +12,9 @@ import SocialBanner from './SocialBanner.astro';
         <div class="text-primary">
             <ContactIcon />
         </div>
-        <h2 class="ml-3">Contacto</h2>
+        <h2 class="ml-3">
+            {t('nav.contact')}
+        </h2>
     </div>
 
     <div class="my-5">
@@ -100,10 +106,12 @@ import SocialBanner from './SocialBanner.astro';
                 </svg>
             </div>
             <div class="absolute w-[114px] h-[114px] bg-white rounded-full flex justify-center items-center top-[calc(50%-57px)] p-2.5">
-                <img class="rounded-full" src="/public/assets/profile-photo.jpg" alt="profile-avatar">
+                <img class="rounded-full select-none" src="/public/assets/profile-photo.jpg" alt="profile-avatar">
             </div>
             <div class="mt-[60px] text-[18px] text-black">Matias Gonta</div>
-            <div class="my-2.5 text-[15px] text-[#78858f]">Desarrollador y Programador Web</div>
+            <div class="my-2.5 text-[15px] text-[#78858f]">
+                {t('contact.subtitle')}
+            </div>
             <SocialBanner />
         </div>
     </div>

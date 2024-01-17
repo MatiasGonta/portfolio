@@ -3,6 +3,10 @@ import LinkedinIcon from "@icons/social/Linkedin.icon.astro";
 import GitHubIcon from "@icons/social/GitHub.icon.astro";
 import InstagramIcon from "@icons/social/Instagram.icon.astro";
 import SocialBadge from "./SocialBadge.astro";
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <article class="w-full flex items-end px-7 lg:p-0">
@@ -12,19 +16,21 @@ import SocialBadge from "./SocialBadge.astro";
                 <img
                     src="/public/assets/profile-photo.jpg"
                     alt="matias-gonta-profile-photo"
-                    class="w-[50px] h-[50px] object-cover rounded-full"
+                    class="w-[50px] h-[50px] object-cover rounded-full select-none"
                 />
             </div>
 
             <div class="flex items-center my-1">
-                <h1 class="text-[30px] font-bold inline">Hey, soy Matias Gonta</h1>
+                <h1 class="text-[30px] font-bold inline">
+                    {t('home.title')}
+                </h1>
                 <span class="absolute top-2.5 left-14 ml-3 h-fit text-[12px] bg-[rgba(89,160,98,0.3)] rounded-full text-[rgb(89,160,98)] border border-[rgb(89,160,98)] px-[10px] py-[5px] sm:static">
-                    Disponible para trabajar
+                    {t('home.job-status')}
                 </span>
             </div>
 
             <div class="mb-5">
-                <p class="opacity-95">Desarrollador y Programador Web. De Cañada de Gomez, Santa Fe, Argentina.</p>
+                <p class="opacity-95">{t('home.description')}</p>
             </div>
             
             <div class="w-full max-w-[350px] flex flex-wrap gap-5 items-center">

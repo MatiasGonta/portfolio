@@ -3,75 +3,98 @@ import LinkedinIcon from "@icons/social/Linkedin.icon.astro";
 import GitHubIcon from "@icons/social/GitHub.icon.astro";
 import InstagramIcon from "@icons/social/Instagram.icon.astro";
 import GmailIcon from "@icons/social/Gmail.icon.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 type Socials = {
-    bg: string,
-    icon: (_props: Record<string, any>) => any,
-    href?: string
-}
+    bg: string;
+    icon: (_props: Record<string, any>) => any;
+    href?: string;
+};
 
 const socials: Socials[] = [
     {
-        href: 'https://www.linkedin.com/in/matías-gonta/',
-        bg: 'bg-[#0a66c2]',
-        icon: LinkedinIcon
+        href: "https://www.linkedin.com/in/matías-gonta/",
+        bg: "bg-[#0a66c2]",
+        icon: LinkedinIcon,
     },
     {
-        href: 'https://github.com/MatiasGonta',
-        bg: 'bg-[#202020]',
-        icon: GitHubIcon
+        href: "https://github.com/MatiasGonta",
+        bg: "bg-[#202020]",
+        icon: GitHubIcon,
     },
     {
-        href: 'https://www.instagram.com/matigonta_/',
+        href: "https://www.instagram.com/matigonta_/",
         bg: 'bg-[#f09433] bg-[-moz-linear-gradient(45deg,#f09433_0%,#e6683c_25%,#dc2743_50%,#cc2366_75%,#bc1888_100%)] bg-[-webkit-linear-gradient(45deg,#f09433_0%,#e6683c_25%,#dc2743_50%,#cc2366_75%,#bc1888_100%)] bg-[linear-gradient(45deg,#f09433_0%,#e6683c_25%,#dc2743_50%,#cc2366_75%,#bc1888_100%)] filter-[progid:DXImageTransform.Microsoft.gradient(startColorstr="#f09433",endColorstr="#bc1888",GradientType=1)]',
-        icon: InstagramIcon
+        icon: InstagramIcon,
     },
     {
         bg: 'bg-[rgb(64,129,236)] bg-[linear-gradient(45deg,rgba(227,65,51,1)_0%,rgba(191,33,30,1)_25%,rgba(227,65,51,1)_50%,rgba(191,33,30,1)_75%,rgba(227,65,51,1)_100%)] filter-[progid:DXImageTransform.Microsoft.gradient(startColorstr="#e34133",endColorstr="#e34133",GradientType=1)]',
-        icon: GmailIcon
+        icon: GmailIcon,
     },
-]
+];
 ---
 
 <div class="flex gap-8 items-center">
     {
-        socials.map(({ href, bg, icon: Icon }) => (
-            <div class="group cursor-pointer transition-trasform active:scale-90" id={!href ? 'gmail-icon' : null}>
-                <a href={href} target="_blank" class={`size-10 flex items-center justify-center border-none bg-transparent relative rounded-md transition-all duration-300 ${!href && 'pointer-events-none'} focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-primary`}>
+        socials.map(({ href, bg, icon: Icon }) =>
+            href ? (
+                <a
+                    href={href}
+                    target="_blank"
+                    class="group cursor-pointer size-10 flex items-center justify-center border-none bg-transparent relative rounded-md transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary active:scale-90"
+                >
                     <div class="relative size-full flex items-center justify-center bg-transparent blur-0 tracking-[0.8px] rounded-lg transition-all duration-300 border border-[rgba(156,156,156,0.466)] z-20 group-hover:border group-hover:border-[rgba(206,206,206,0.466)] group-hover:bg-[rgba(214,214,214,0.466)] group-hover:backdrop-blur-sm">
                         <div class="size-6">
                             <Icon />
                         </div>
-                        {
-                            !href && (
-                                <div class="transition-all size-0 opacity-0 text-[#202020] absolute z-50 group-hover:size-5 group-hover:opacity-100">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="100%"
-                                        height="100%"
-                                        viewBox="0 0 24 24"
-                                        stroke-width="1.5"
-                                        stroke="currentColor"
-                                        fill="none"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                        <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
-                                        <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
-                                    </svg>
-                                </div>
-                            )
-                        }
                     </div>
-                    <div class={`absolute content-[''] size-full z-10 rounded-lg pointer-events-none transition-all duration-300 ${bg} group-hover:rotate-[35deg] group-hover:origin-bottom`}></div>
+                    <div class={`absolute content-[''] size-full z-10 rounded-lg pointer-events-none transition-all duration-300 ${bg} group-hover:rotate-[35deg] group-hover:origin-bottom`} />
                 </a>
-            </div>
-        ))
+            ) : (
+                <button
+                    id="gmail-icon"
+                    class="group cursor-pointer size-10 flex items-center justify-center border-none bg-transparent relative rounded-md transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary active:scale-90"
+                >
+                    <div class="relative size-full flex items-center justify-center bg-transparent blur-0 tracking-[0.8px] rounded-lg transition-all duration-300 border border-[rgba(156,156,156,0.466)] z-20 group-hover:border group-hover:border-[rgba(206,206,206,0.466)] group-hover:bg-[rgba(214,214,214,0.466)] group-hover:backdrop-blur-sm">
+                        <div class="size-6">
+                            <Icon />
+                        </div>
+                        <div class="transition-all size-0 opacity-0 text-[#202020] absolute z-50 group-hover:size-5 group-hover:opacity-100">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="100%"
+                                height="100%"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    stroke="none"
+                                    d="M0 0h24v24H0z"
+                                    fill="none"
+                                />
+                                <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+                                <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class={`absolute content-[''] size-full z-10 rounded-lg pointer-events-none transition-all duration-300 ${bg} group-hover:rotate-[35deg] group-hover:origin-bottom`} />
+                </button>
+            )
+        )
     }
 
     {/* Toast */}
-    <div class="transition-width duration-200 text-nowrap overflow-hidden fixed h-0 invisible p-2.5 flex items-center justify-start bg-[#daebfd] -bottom-24 right-1/2 translate-x-1/2 border border-[#5996d5] rounded-lg shadow-[0_0_5px_-3px_#111]" id="toast">
+    <div
+        class="transition-width duration-200 text-nowrap overflow-hidden fixed h-0 invisible p-2.5 flex items-center justify-start bg-[#daebfd] -bottom-24 right-1/2 translate-x-1/2 border border-[#5996d5] rounded-lg shadow-[0_0_5px_-3px_#111]"
+        id="toast"
+    >
         <div class="relative size-6 -translate-y-0.5 mt-1 mr-3 bg-[#daebfd] rounded-full border border-transparent z-50">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -86,36 +109,47 @@ const socials: Socials[] = [
                 stroke-linecap="round"
                 stroke-linejoin="round"
             >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
-                <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" />
-                <path d="M9 14l2 2l4 -4" />
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"></path>
+                <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"></path>
+                <path d="M9 14l2 2l4 -4"></path>
             </svg>
 
             {/* Toast Loader */}
             <div class="absolute -top-0.5 -left-0.5 size-[26px] z-10 rounded-full overflow-hidden">
-                <div class="loader size-full bg-[linear-gradient(to_right,#5996d5_50%,#fafafa_50%)] rounded-full after:absolute after:content-[''] after:h-full after:w-1/2 after:origin-[100%_50%] after:rounded-[2%_0_0_2%]" id="toast-loader"></div>
+                <div
+                    class="loader size-full bg-[linear-gradient(to_right,#fafafa_50%,#5996d5_50%)] rounded-full after:absolute after:content-[''] after:h-full after:w-1/2 after:origin-[100%_50%] after:rounded-[2%_0_0_2%]"
+                    id="toast-loader"
+                ></div>
             </div>
         </div>
-        <div class="text-[14px] text-[#1f4266]">¡Gmail copiado en portapapeles!</div>
+        <div class="text-[14px] text-[#1f4266]">
+            {t("contact.toast")}
+        </div>
     </div>
 </div>
 
 <script>
-    const gmailIconRef = document.getElementById('gmail-icon')!;
-    const toastRef = document.getElementById('toast')!;
-    const toastLoaderRef = document.getElementById('toast-loader')!;
+    const gmailIconRef = document.getElementById("gmail-icon")!;
+    const toastRef = document.getElementById("toast")!;
+    const toastLoaderRef = document.getElementById("toast-loader")!;
 
-    gmailIconRef.addEventListener('click', () => {
+    gmailIconRef.addEventListener("click", () => {
         navigator.clipboard.writeText("maret2023@gmail.com");
-        toastRef.classList.remove('invisible','-bottom-24','h-0');
-        toastRef.classList.add('visible','bottom-5','h-[43px]');
-        toastLoaderRef.classList.add('animate-loader-time','after:animate-loader-mask');
+        toastRef.classList.remove("invisible", "-bottom-24", "h-0");
+        toastRef.classList.add("visible", "bottom-5", "h-[43px]");
+        toastLoaderRef.classList.add(
+            "animate-loader-time",
+            "after:animate-loader-mask",
+        );
 
         setTimeout(() => {
-            toastRef.classList.add('invisible','-bottom-24','h-0');
-            toastRef.classList.remove('visible','bottom-5','h-[43px]');
-            toastLoaderRef.classList.remove('animate-loader-time','after:animate-loader-mask');
-        }, 3000)
-    })
+            toastRef.classList.add("invisible", "-bottom-24", "h-0");
+            toastRef.classList.remove("visible", "bottom-5", "h-[43px]");
+            toastLoaderRef.classList.remove(
+                "animate-loader-time",
+                "after:animate-loader-mask",
+            );
+        }, 3000);
+    });
 </script>

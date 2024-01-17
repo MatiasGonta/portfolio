@@ -1,6 +1,10 @@
 ---
 import AboutIcon from '@icons/section/About.icon.astro';
 import DocsButton from './DocsButton.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <article class="px-7 lg:px-0">
@@ -8,12 +12,14 @@ import DocsButton from './DocsButton.astro';
         <div class="text-primary">
             <AboutIcon />
         </div>
-        <h2 class="ml-3">Sobre mí</h2>
+        <h2 class="ml-3">
+            {t('nav.about')}
+        </h2>
     </div>
     <div>
     </div>
     <div class="my-5 flex flex-col gap-2.5">
-        <p>Desarrollador Front-end con conocimientos de Back-end utilizando NodeJS y MongoDB. Autodidacta con curiosidad como base de superación e interés constante por aprender nuevas tecnologías. Mi objetivo es hacer crecer mi carrera profesional como desarrollador, aprovechando mi perseverancia, una cualidad que aplico en todos los aspectos de mi vida.</p>
-        <DocsButton>Descargar CV</DocsButton>
+        <p>{t('about.description')}</p>
+        <DocsButton>{t('about.button')}</DocsButton>
     </div>
 </article>

@@ -3,6 +3,10 @@ import GitHubIcon from "@icons/social/GitHub.icon.astro";
 import YoutubeIcon from "@icons/social/Youtube.icon.astro";
 import TechBadge from './TechBadge';
 import { projectsData } from "@data/data.ts";
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 // Number check
 const isEven = (number: number) => number % 2 === 0;
@@ -44,7 +48,7 @@ const isEven = (number: number) => number % 2 === 0;
                     <div class="front bg-[#151515] absolute size-full overflow-hidden">
                         <div class="absolute size-full object-cover object-center">
                             {/* Background circles */}
-                            <div class="size-[90px] rounded-full bg-primary-light relative blur-[15px] animate-floating" />
+                            <div class="size-[90px] rounded-full bg-[rgba(119,158,198,0.3)] relative blur-[15px] animate-floating" />
                             <div class="size-[30px] rounded-full bg-primary relative blur-[15px] animate-floating left-[160px] top-[-80px] delay-[-1800ms]" />
                             <div class="size-[150px] rounded-full bg-[rgb(120,135,150)] relative blur-[15px] animate-floating left-[170px] top-0 -delay-700" />
                         </div>
@@ -63,7 +67,7 @@ const isEven = (number: number) => number % 2 === 0;
                             </div>
                             <div class="flex flex-col justify-between w-[240px]">
                                 <div>
-                                    <p class="text-[12px] text-pretty">{project.description}</p>
+                                    <p class="text-[12px] text-pretty">{t(project.description)}</p>
                                 </div>
                                 <div class="size-fit self-end flex gap-3 items-center">
                                     <a
@@ -75,7 +79,9 @@ const isEven = (number: number) => number % 2 === 0;
                                         <div class="relative size-4">
                                             <YoutubeIcon />
                                         </div>
-                                        <span class="text-nowrap mt-px">Ver review</span>
+                                        <span class="text-nowrap mt-px">
+                                            {t('projects.buttons.youtube')}
+                                        </span>
                                     </a>
                                     <a
                                         href={project.repositoryUrl}
@@ -86,7 +92,9 @@ const isEven = (number: number) => number % 2 === 0;
                                         <div class="relative size-4">
                                             <GitHubIcon />
                                         </div>
-                                        <span class="text-nowrap mt-px">Ver repositorio</span>
+                                        <span class="text-nowrap mt-px">
+                                            {t('projects.buttons.github')}
+                                        </span>
                                     </a>
                                 </div>
                             </div>

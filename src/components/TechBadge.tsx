@@ -16,7 +16,7 @@ const TechBadge: React.FC<TechBadgeInterface> = (props) => {
 
     return (
         <div>
-            <a href={props.href} className={`transition-all duration-300 flex items-center rounded-full py-[5px] px-[15px] border bg-gray-800 ${styles} focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-primary`} target="_blank">
+            <a href={props.href} className={`transition-all duration-300 flex items-center rounded-full py-[5px] px-[15px] border bg-gray-800 ${styles} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary`} target="_blank">
                 <div className="size-3.5">
                     {props.children}
                 </div>

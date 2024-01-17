@@ -106,7 +106,7 @@ export const technologiesData = [
 export const projectsData = [
     {
         name: "CECLA 6626",
-        description: '"CECLA 6626" es una versión modernizada del sitio web existente del Centro de Formación Laboral 6626, Brigadier General Estanislao López (CECLA 6626), aprovechando Astro y Tailwind para mejorar tanto la experiencia del usuario (UX) como la interfaz del usuario (UI).',
+        description: 'projects.cecla6626.description',
         img: {
             src: "/public/assets/projectMockups/CECLA6626-mockup.png",
             alt: "CECLA6626-mockup",
@@ -121,7 +121,7 @@ export const projectsData = [
     },
     {
         name: "Sabrina",
-        description: 'Sabrina es un ecommerce full-stack de ropa. Cuenta con 25 páginas, como Inicio, ProductsPage con catálogo de productos, CartPage y un Dashboard al que solo pueden acceder los administradores a diversas estadísticas, tablas de pedidos, productos y usuarios, permitiendoles realizar operaciones como eliminación, actualización y creación (CRUD).',
+        description: 'projects.sabrina.description',
         img: {
             src: "/public/assets/projectMockups/sabrina-mockup.png",
             alt: "sabrina-mockup",
@@ -140,7 +140,7 @@ export const projectsData = [
     },
     {
         name: "Sunshine Weather",
-        description: 'Sunshine Weather es una aplicación web que proporciona información meteorológica para cualquier lugar del mundo. Los usuarios pueden buscar fácilmente una ciudad o país y obtener actualizaciones meteorológicas en tiempo real, incluida la temperatura, la humedad, la velocidad del viento y una descripción.',
+        description: 'projects.sunshine-weather.description',
         img: {
             src: "/public/assets/projectMockups/sunshine-weather-mockup.png",
             alt: "sunshine-weather-mockup",
@@ -155,7 +155,7 @@ export const projectsData = [
     },
     {
         name: "The Exchange Corner",
-        description: 'Exchange Corner es una aplicación web que ofrece conversión de moneda y obtención de tipos de cambio históricos. Los usuarios pueden realizar conversiones de divisas, explorar tipos de cambio históricos y agregar sus pares de divisas favoritos.',
+        description: 'projects.the-exchange-corner.description',
         img: {
             src: "/public/assets/projectMockups/the-exchange-corner-mockup.png",
             alt: "the-exchange-corner-mockup",
@@ -171,7 +171,7 @@ export const projectsData = [
     },
     {
         name: "Puzzle Home",
-        description: 'Puzzle Home es una página web que ofrece una colección de rompecabezas para que los usuarios disfruten y desafíen sus habilidades de resolución. El proyecto se desarrolla utilizando React con TypeScript y utiliza varias bibliotecas y herramientas populares para brindar una experiencia de usuario fluida y atractiva.',
+        description: 'projects.puzzle-home.description',
         img: {
             src: "/public/assets/projectMockups/puzzle-home-mockup.png",
             alt: "puzzle-home-mockup",
@@ -186,7 +186,7 @@ export const projectsData = [
     },
     {
         name: "minDDraw",
-        description: 'minDDraw es un sitio web de dibujo similar a Microsoft Paint, que permite a los usuarios dar rienda suelta a su creatividad y crear obras de arte digitales.',
+        description: 'projects.minddraw.description',
         img: {
             src: "/public/assets/projectMockups/minDDraw-mockup.png",
             alt: "minDDraw-mockup",
@@ -201,7 +201,7 @@ export const projectsData = [
     },
     {
         name: "Tech Flip",
-        description: 'Tech Flip es un juego de combinación de tarjetas de memoria basado en la temática de los lenguajes de programación. Proporciona una interfaz sencilla donde los usuarios pueden poner a prueba sus habilidades de memoria volteando cartas y haciendo coincidir pares.',
+        description: 'projects.techflip.description',
         img: {
             src: "/public/assets/projectMockups/tech-flip-mockup.png",
             alt: "tech-flip-mockup",

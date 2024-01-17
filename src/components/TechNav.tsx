@@ -22,7 +22,7 @@ const TechNav: React.FC<TechNavInterface> = () => {
                 {
                     technologiesData.map(({ name, icon: Icon, styles, activeStyles }, index) => (
                             <li key={index} className="inline w-fit h-fit" onClick={() => handleOnClick(name)}>
-                                <button className={`transition-all duration-300 cursor-pointer flex flex-col justify-center items-center size-[85px] select-none rounded-xl bg-[#13151a] border ${$selectedTech === name ? activeStyles : `border-white ${styles} focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-primary`}`}>
+                                <button className={`transition-all duration-300 cursor-pointer flex flex-col justify-center items-center size-[85px] select-none rounded-xl bg-[#13151a] border ${$selectedTech === name ? activeStyles : `border-white ${styles} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary`}`}>
                                     <div className="size-[25px]">
                                         <Icon />
                                     </div>

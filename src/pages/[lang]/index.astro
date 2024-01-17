@@ -1,0 +1,189 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import HomeSection from "@components/HomeSection.astro";
+import ProjectsSection from "@components/ProjectsSection.astro";
+import AboutSection from "@components/AboutSection.astro";
+import ContactSection from "@components/ContactSection.astro";
+import { Sections } from "@models/sections";
+import Home from "@icons/section/Home.icon.astro";
+import Projects from "@icons/section/Projects.icon.astro";
+import About from "@icons/section/About.icon.astro";
+import Contact from "@icons/section/Contact.icon.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+export async function getStaticPaths() {
+    return ['es','en'].map((lang) => {
+        return { params: { lang } }
+    })
+}
+
+type NavCircle = {
+	name: string;
+	icon: any;
+	href: Sections;
+	class: string;
+};
+
+const scrollNavCircles: NavCircle[] = [
+	{
+		name: t('nav.home'),
+		icon: Home,
+		href: Sections.HOME,
+		class: "top-7",
+	},
+	{
+		name: t('nav.projects'),
+		icon: Projects,
+		href: Sections.PROJECTS,
+		class: "top-[90px]",
+	},
+	{
+		name: t('nav.about'),
+		icon: About,
+		href: Sections.ABOUT,
+		class: "bottom-[90px]",
+	},
+	{
+		name: t('nav.contact'),
+		icon: Contact,
+		href: Sections.CONTACT,
+		class: "bottom-7",
+	},
+];
+---
+
+<Layout title={t('document.title')} lang={lang}>
+	<!-- ScrollNav -->
+	<div id="scroll-nav" class="hidden transition-right duration-300 fixed top-1/2 -translate-y-1/2 invisible opacity-0 h-0 -right-5 xl:block">
+		<div class="relative w-[125px] flex flex-col justify-center items-center">
+			<div class="w-[2px] h-[275px] bg-white rounded-lg"></div>
+			{
+				scrollNavCircles.map((circle) => (
+					<a
+						href={`#${circle.href}`}
+						class={`group transition-width duration-200 text-nowrap select-none absolute ${circle.class} size-[35px] rounded-full text-primary-light bg-white border border-[#ccc] flex justify-center items-center hover:w-auto hover:px-2.5 hover:right-11`}
+						tabindex="-1"
+					>
+						<div>
+							<circle.icon />
+						</div>
+						<div class="size-0 invisible opacity-0 group-hover:size-auto group-hover:visible group-hover:opacity-100 group-hover:ml-1">
+							<span class="select-none">{circle.name}</span>
+						</div>
+					</a>
+				))
+			}
+		</div>
+	</div>
+
+	<main class="mx-auto w-full text-white text-[16px] leading-normal">
+		<Header />
+
+		<section id={Sections.HOME} class="w-full h-auto max-w-[800px] mx-auto">
+			<HomeSection />
+		</section>
+
+		<section id={Sections.PROJECTS} class="w-full h-auto max-w-[800px] mx-auto my-[200px]">
+			<ProjectsSection />
+		</section>
+
+		<section id={Sections.ABOUT} class="w-full h-auto max-w-[800px] mx-auto my-[200px]">
+			<AboutSection />
+		</section>
+
+		<section id={Sections.CONTACT} class="w-full h-auto max-w-[800px] mx-auto my-[200px]">
+			<ContactSection />
+		</section>
+	</main>
+</Layout>
+
+<script>
+	import { Sections } from "@models/sections";
+
+	type SectionRefs = {
+		[key in Sections]: HTMLElement;
+	}
+
+	enum ScrollDirections {
+		UP = "up",
+		DOWN = "down",
+	}
+
+	// ScrollNav
+	const scrollNav = document.getElementById("scroll-nav")!;
+
+	// Sections
+	const sections: SectionRefs = {
+		home: document.getElementById(Sections.HOME)!,
+		projects: document.getElementById(Sections.PROJECTS)!,
+		about: document.getElementById(Sections.ABOUT)!,
+		contact: document.getElementById(Sections.CONTACT)!
+	}
+
+	let scrollPositionBeforeHashChange = 0;
+
+	let scrollDirection: ScrollDirections = ScrollDirections.DOWN;
+
+	window.addEventListener("scroll", () => {
+  		const currentScrollPosition = window.scrollY;
+
+		// Handle scroll direction
+  		if (currentScrollPosition > scrollPositionBeforeHashChange) {
+    		scrollDirection = ScrollDirections.DOWN;
+  		} else {
+    		scrollDirection = ScrollDirections.UP;
+  		}
+
+  		scrollPositionBeforeHashChange = currentScrollPosition;
+	});
+
+	const handleObserver = (entries: IntersectionObserverEntry[]) => {
+		entries.forEach((entry: IntersectionObserverEntry) => {
+			console.log(entry)
+			let sectionView = entry.target.id;
+
+			// Storage scrollY position before hash change
+			scrollPositionBeforeHashChange = window.scrollY;
+
+			// Change URL hash only if section is completely in view
+			if (entry.isIntersecting) {
+				if (scrollDirection === ScrollDirections.DOWN) {
+        			window.location.hash = sectionView;
+        			window.scrollTo(0, scrollPositionBeforeHashChange);
+      			}
+      		}
+
+			// Handle visibility of scrollNav
+			if (window.scrollY < 350) {
+				scrollNav.classList.remove("visible","opacity-100","h-auto","right-2",);
+				scrollNav.classList.add("invisible","opacity-0","h-0","-right-5",);
+			} else {
+				scrollNav.classList.add("visible","opacity-100","h-auto","right-2",);
+				scrollNav.classList.remove("invisible","opacity-0","h-0","-right-5",);
+			}
+
+			// Handle scrollNav circle active
+			const scrollNavCircle = document.querySelector(`a[href="#${sectionView}"]`)!;
+
+			if (entry.isIntersecting) {
+				scrollNavCircle.classList.remove("text-primary-light");
+				scrollNavCircle.classList.add("text-primary");
+			} else {
+				scrollNavCircle.classList.remove("text-primary");
+				scrollNavCircle.classList.add("text-primary-light");
+			}
+		});
+	};
+	const sectionObservator = new IntersectionObserver(handleObserver, {
+		threshold: 0.15,
+	});
+
+  	// Observe each section
+  	for (const section in sections) {
+		sectionObservator.observe(sections[section as keyof SectionRefs]);
+  	}
+</script>

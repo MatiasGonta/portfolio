@@ -5,7 +5,7 @@ export default {
 		extend: {
 			colors: {
 				'primary': 'rgba(119,158,198,90)',
-				'primary-light': 'rgba(119,158,198,0.3)',
+				'primary-light': 'rgba(119,158,198,0.6)',
 
 				// Tech colors
 				'javascript': '#f7df1e',
@@ -68,19 +68,19 @@ export default {
 				},
 				'loader-mask': {
 					'0%': {
-						background: '#fafafa',
+						background: '#5996d5',
 						transform: 'rotate(0deg)'
 					},
 					'50%': {
-						background: '#fafafa',
+						background: '#5996d5',
 						transform: 'rotate(-180deg)'
 					},
 					'50.01%': {
-						background: '#5996d5',
+						background: '#fafafa',
 						transform: 'rotate(0deg)'
 					},
 					'100%': {
-						background: '#5996d5',
+						background: '#fafafa',
 						transform: 'rotate(-180deg)'
 					}
 				},

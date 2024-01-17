@@ -1,4 +1,11 @@
-<div class="curriculum-select group relative hover:h-[104px]">
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="curriculum-select group relative">
   <button class="peer w-full border-none relative rounded text-[14px] z-20 leading-5 py-4 px-[69px] transition-bg duration-300 text-white bg-[#404660] before:content-[''] before:absolute before:w-2.5 before:h-0.5 before:rounded-[1px] before:bg-white before:origin-[9px_1px] before:top-[26px] before:right-4 before:transition-transform before:duration-300 after:content-[''] after:absolute after:w-2.5 after:h-0.5 after:rounded-[1px] after:bg-white after:origin-[9px_1px] after:top-[26px] after:right-4 after:transition-transform after:duration-300 group-hover:before:-rotate-45 group-hover:after:rotate-45 group-hover:rounded-b-none">
     <div class="absolute top-0 left-0 bottom-0 w-[53px] overflow-hidden rounded-l bg-[#2b3044] group-hover:rounded-l-none group-hover:rounded-tl">
       <div class="folder w-[23px] h-[27px] absolute left-[15px] top-[13px] before:content-[''] before:absolute before:rounded-[1px] before:shadow-[0_1.5px_3px_rgba(13,15,25,.2),0_2.5px_5px_rgba(13,15,25,.2),0_3.5px_7px_rgba(13,15,25,.2)] before:bg-[#beb393] before:left-px before:top-px before:w-[21px] before:h-[25px] group-hover:before:-translate-x-10 after:content-[''] after:absolute after:rounded-[1px] after:bg-[#e1e6f9] after:left-0 after:top-0 after:size-full group-hover:after:translate-x-[3px] group-hover:after:-translate-y-[3px]">
@@ -21,9 +28,9 @@
     <div class="w-1/2 h-full transition-bg duration-300 hover:bg-[#2b3044]">
       <a href="/docs?lang=es" target="_blank" class="size-full flex justify-center items-center gap-1">
         <div class="size-fit h-[19px] overflow-hidden border border-[#ccc] rounded-sm">
-          <img class="w-6 h-5 -mt-[1.5px]" src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="es-flag">
+          <img class="w-6 h-5 -mt-[1.5px] select-none" src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="es-flag">
         </div>
-        <span class="mt-px">Español</span>
+        <span class="mt-px">{t('about.button.language.es')}</span>
       </a>
     </div>
 
@@ -32,9 +39,9 @@
     <div class="w-1/2 h-full transition-bg duration-300 hover:bg-[#2b3044]">
       <a href="/docs?lang=en" target="_blank" class="size-full flex justify-center items-center gap-1">
         <div class="size-fit h-[19px] overflow-hidden border border-[#ccc] rounded-sm">
-          <img class="w-6 h-5 -mt-[1.5px]" src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="gb-flag">
+          <img class="w-6 h-5 -mt-[1.5px] select-none" src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="gb-flag">
         </div>
-        <span class="mt-px">Ingles</span>
+        <span class="mt-px">{t('about.button.language.en')}</span>
       </a>
     </div>
   </div>
