@@ -1,5 +1,5 @@
 ---
-import '@fontsource-variable/onest';
+import "@fontsource-variable/onest";
 interface Props {
 	title: string;
 }
@@ -13,13 +13,20 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/icon" href="/public/assets/profile-photo.ico" />
+		<link
+			rel="icon"
+			type="image/icon"
+			href="/public/assets/profile-photo.ico"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
 		<!-- Background -->
-		<div class="absolute top-0 z-[-2] w-screen h-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(119,158,198,0.3),rgba(255,255,255,0))]"></div>
+		<div
+			class="absolute top-0 z-[-2] w-screen h-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(119,158,198,0.3),rgba(255,255,255,0))]"
+		>
+		</div>
 		<slot />
 	</body>
 </html>
@@ -28,12 +35,15 @@ const { title } = Astro.props;
 		--accent: 136, 58, 234;
 	}
 	html {
-		font-family: 'Onest Variable', system-ui, sans-serif;
+		font-family: "Onest Variable", system-ui, sans-serif;
 		background-color: #13151a;
 		scroll-behavior: smooth;
 	}
 	body {
 		overflow-x: hidden;
 		list-style: none;
+	}
+	* {
+		outline: none;
 	}
 </style>

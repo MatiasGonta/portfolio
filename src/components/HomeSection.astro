@@ -2,12 +2,12 @@
 import LinkedinIcon from "@icons/social/Linkedin.icon.astro";
 import GitHubIcon from "@icons/social/GitHub.icon.astro";
 import InstagramIcon from "@icons/social/Instagram.icon.astro";
-import Badge from "./Badge.astro";
+import SocialBadge from "./SocialBadge.astro";
 ---
 
-<article class="w-full flex items-end">
+<article class="w-full flex items-end px-7 lg:p-0">
     <div class="w-full h-[350px] flex flex-col justify-end">
-        <div class="flex flex-col">
+        <div class="flex flex-col relative">
             <div>
                 <img
                     src="/public/assets/profile-photo.jpg"
@@ -15,25 +15,30 @@ import Badge from "./Badge.astro";
                     class="w-[50px] h-[50px] object-cover rounded-full"
                 />
             </div>
+
             <div class="flex items-center my-1">
-                <h1 class="text-[30px] font-bold inline">
-                    Hey, soy Matias Gonta
-                </h1>
-                <span
-                    class="ml-3 h-fit text-[12px] bg-[rgba(119,158,198,0.3)] rounded-full border border-white px-[10px] py-[5px]"
-                >
+                <h1 class="text-[30px] font-bold inline">Hey, soy Matias Gonta</h1>
+                <span class="absolute top-2.5 left-14 ml-3 h-fit text-[12px] bg-[rgba(89,160,98,0.3)] rounded-full text-[rgb(89,160,98)] border border-[rgb(89,160,98)] px-[10px] py-[5px] sm:static">
                     Disponible para trabajar
                 </span>
             </div>
+
             <div class="mb-5">
-                <p>
-                    Desarrollador y Programador Web. De Cañada de Gomez, Santa Fe, Argentina.
-                </p>
+                <p class="opacity-95">Desarrollador y Programador Web. De Cañada de Gomez, Santa Fe, Argentina.</p>
             </div>
-            <div class="w-[350px] flex justify-between items-center">
-                <Badge name="Linkedin" icon={LinkedinIcon} href="https://www.linkedin.com/in/matías-gonta/" customClass="size-3.5" />
-                <Badge name="GitHub" icon={GitHubIcon} href="https://github.com/MatiasGonta/" customClass="size-3.5" />
-                <Badge name="Instagram" icon={InstagramIcon} href="https://www.instagram.com/matigonta_/" customClass="size-4" />
+            
+            <div class="w-full max-w-[350px] flex flex-wrap gap-5 items-center">
+                <SocialBadge name="Linkedin" href="https://www.linkedin.com/in/matías-gonta/">
+                    <LinkedinIcon />
+                </SocialBadge>
+
+                <SocialBadge name="GitHub" href="https://github.com/MatiasGonta/">
+                    <GitHubIcon />
+                </SocialBadge>
+
+                <SocialBadge name="Instagram" href="https://www.instagram.com/matigonta_/">
+                    <InstagramIcon />
+                </SocialBadge>
             </div>
         </div>
     </div>

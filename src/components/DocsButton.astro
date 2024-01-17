@@ -1,0 +1,73 @@
+<div class="curriculum-select group relative hover:h-[104px]">
+  <button class="peer w-full border-none relative rounded text-[14px] z-20 leading-5 py-4 px-[69px] transition-bg duration-300 text-white bg-[#404660] before:content-[''] before:absolute before:w-2.5 before:h-0.5 before:rounded-[1px] before:bg-white before:origin-[9px_1px] before:top-[26px] before:right-4 before:transition-transform before:duration-300 after:content-[''] after:absolute after:w-2.5 after:h-0.5 after:rounded-[1px] after:bg-white after:origin-[9px_1px] after:top-[26px] after:right-4 after:transition-transform after:duration-300 group-hover:before:-rotate-45 group-hover:after:rotate-45 group-hover:rounded-b-none">
+    <div class="absolute top-0 left-0 bottom-0 w-[53px] overflow-hidden rounded-l bg-[#2b3044] group-hover:rounded-l-none group-hover:rounded-tl">
+      <div class="folder w-[23px] h-[27px] absolute left-[15px] top-[13px] before:content-[''] before:absolute before:rounded-[1px] before:shadow-[0_1.5px_3px_rgba(13,15,25,.2),0_2.5px_5px_rgba(13,15,25,.2),0_3.5px_7px_rgba(13,15,25,.2)] before:bg-[#beb393] before:left-px before:top-px before:w-[21px] before:h-[25px] group-hover:before:-translate-x-10 after:content-[''] after:absolute after:rounded-[1px] after:bg-[#e1e6f9] after:left-0 after:top-0 after:size-full group-hover:after:translate-x-[3px] group-hover:after:-translate-y-[3px]">
+        <div class="top absolute top-0 left-0 z-[2] group-hover:-translate-x-10">
+          <svg
+            viewBox="0 0 24 27"
+            fill="#f3e9cb"
+            class="w-6 h-[27px] block origin-[0_50%] rotate-y-0"
+          >
+            <path d="M1,0 L23,0 C23.5522847,-1.01453063e-16 24,0.44771525 24,1 L24,8.17157288 C24,8.70200585 23.7892863,9.21071368 23.4142136,9.58578644 L20.5857864,12.4142136 C20.2107137,12.7892863 20,13.2979941 20,13.8284271 L20,26 C20,26.5522847 19.5522847,27 19,27 L1,27 C0.44771525,27 6.76353751e-17,26.5522847 0,26 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z"></path>
+          </svg>
+        </div>
+        <div class="paper content-[''] absolute rounded-[1px] bg-white left-0 top-0 size-full z-[1] before:content-[''] before:h-0.5 before:rounded-[1px] before:left-[3px] before:absolute before:bg-[#bbc1e1] before:scale-y-50 before:shadow-[0_12px_0_0_#BBC1E1,0_24px_0_0_#BBC1E1] before:w-2.5 before:top-1.5 after:content-[''] after:h-0.5 after:rounded-[1px] after:left-[3px] after:absolute after:bg-[#bbc1e1] after:scale-y-50 after:shadow-[0_12px_0_0_#BBC1E1,0_24px_0_0_#BBC1E1] after:w-[14px] after:top-[3px]"></div>
+      </div>
+    </div>
+    <slot />
+  </button>
+
+  <div class="transition-top duration-200 flex items-center w-full h-[52px] invisible overflow-hidden absolute top-0 z-10 peer-hover:top-[52px] hover:top-[52px] peer-hover:visible hover:visible peer-hover:bg-[#3a4058] hover:bg-[#3a4058] rounded-b">
+    <div class="w-1/2 h-full transition-bg duration-300 hover:bg-[#2b3044]">
+      <a href="/docs?lang=es" target="_blank" class="size-full flex justify-center items-center gap-1">
+        <div class="size-fit h-[19px] overflow-hidden border border-[#ccc] rounded-sm">
+          <img class="w-6 h-5 -mt-[1.5px]" src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="es-flag">
+        </div>
+        <span class="mt-px">Español</span>
+      </a>
+    </div>
+
+    <div class="w-0.5 h-5/6 bg-[#404660]"></div>
+
+    <div class="w-1/2 h-full transition-bg duration-300 hover:bg-[#2b3044]">
+      <a href="/docs?lang=en" target="_blank" class="size-full flex justify-center items-center gap-1">
+        <div class="size-fit h-[19px] overflow-hidden border border-[#ccc] rounded-sm">
+          <img class="w-6 h-5 -mt-[1.5px]" src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="gb-flag">
+        </div>
+        <span class="mt-px">Ingles</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .curriculum-select > button > div .folder .top {
+    transition: transform 0.4s ease 0.3s;
+  }
+
+  .curriculum-select:hover > button > div .folder .top {
+    transition: transform 0.4s ease 0.15s;
+  }
+
+  .curriculum-select > button > div .folder .top svg {
+    transition: transform 0.3s ease 0.45s;
+    transform: perspective(120px);
+  }
+
+  .curriculum-select:hover > button > div .folder .top svg {
+    transition: transform 0.3s ease 0s;
+    transform: perspective(120px) rotateY(-60deg);
+  }
+
+  .curriculum-select > button > div .folder:before {
+    transition: transform 0.4s ease 0.3s;
+  }
+
+  .curriculum-select:hover > button > div .folder:before {
+    transition: transform 0.4s ease 0.15s;
+  }
+
+  .curriculum-select > button > div .folder:after {
+    transition: transform 0.4s ease 0.15s;
+  }
+</style>

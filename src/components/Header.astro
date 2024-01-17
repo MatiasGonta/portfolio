@@ -28,11 +28,11 @@ const headerLinks: HeaderLink[] = [
 
 <header class="w-full h-[75px]">
     <nav class="size-full max-w-[500px] mx-auto">
-        <ul class="size-full flex justify-between items-center">
+        <ul class="size-full px-7 flex justify-between items-center sm:p-0">
             {
                 headerLinks.map(({ name, href }) => (
                     <li>
-                        <a href={`#${href}`} class="transition-color duration-300 hover:text-primary-light">
+                        <a href={`#${href}`} class="transition-color duration-300 p-0.5 rounded hover:text-primary-light focus:text-primary-light">
                             {name}
                         </a>
                     </li>

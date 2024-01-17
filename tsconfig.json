@@ -1,11 +1,22 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "C:/Users/maret/OneDrive/Escritorio/Cursos Development/Proyects/portfolio",
+    "jsx": "react-jsx",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@models/*": ["src/models/*"],
-      "@icons/*": ["src/icons/*"],
-    }
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@models/*": [
+        "src/models/*"
+      ],
+      "@icons/*": [
+        "src/icons/*"
+      ],
+      "@data/*": [
+        "src/data/*"
+      ]
+    },
+    "jsxImportSource": "react"
   }
 }

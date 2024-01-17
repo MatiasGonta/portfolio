@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import HomeSection from "@components/HomeSection.astro";
 import ProjectsSection from "@components/ProjectsSection.astro";
+import AboutSection from "@components/AboutSection.astro";
+import ContactSection from "@components/ContactSection.astro";
 import { Sections } from "@models/sections";
 import Home from "@icons/section/Home.icon.astro";
 import Projects from "@icons/section/Projects.icon.astro";
@@ -30,7 +32,7 @@ const scrollNavCircles: NavCircle[] = [
 		class: "top-[90px]",
 	},
 	{
-		name: "Sobre mi",
+		name: "Sobre mí",
 		icon: About,
 		href: Sections.ABOUT,
 		class: "bottom-[90px]",
@@ -46,7 +48,7 @@ const scrollNavCircles: NavCircle[] = [
 
 <Layout title="Portfolio de Matias Gonta - Desarrollador y programador Web">
 	<!-- ScrollNav -->
-	<div id="scroll-nav" class="transition-right duration-300 fixed top-1/2 -translate-y-1/2 invisible opacity-0 h-0 -right-5">
+	<div id="scroll-nav" class="hidden transition-right duration-300 fixed top-1/2 -translate-y-1/2 invisible opacity-0 h-0 -right-5 xl:block">
 		<div class="relative w-[125px] flex flex-col justify-center items-center">
 			<div class="w-[2px] h-[275px] bg-white rounded-lg"></div>
 			{
@@ -54,6 +56,7 @@ const scrollNavCircles: NavCircle[] = [
 					<a
 						href={`#${circle.href}`}
 						class={`group transition-width duration-200 text-nowrap absolute ${circle.class} size-[35px] rounded-full text-primary-light bg-white border border-[#ccc] flex justify-center items-center hover:w-auto hover:px-2.5 hover:right-11`}
+						tabindex="-1"
 					>
 						<div>
 							<circle.icon />
@@ -79,9 +82,11 @@ const scrollNavCircles: NavCircle[] = [
 		</section>
 
 		<section id={Sections.ABOUT} class="w-full h-auto max-w-[800px] mx-auto my-[200px]">
+			<AboutSection />
 		</section>
 
 		<section id={Sections.CONTACT} class="w-full h-auto max-w-[800px] mx-auto my-[200px]">
+			<ContactSection />
 		</section>
 	</main>
 </Layout>

@@ -22,6 +22,16 @@ export default {
 				'express': '#404040',
 				'mongodb': '#47a248',
 				'nextjs': '#404040',
+				'bootstrap': '#7952b3',
+				'materialui': '#007fff',
+				'reactquery': '#ff4154',
+				'reactrouter': '#ca4245',
+				'chartjs': '#ff6384',
+				'axios': '#5a29e4',
+				'mongoose': '#880000',
+				'nextintl': '#5fc3e7',
+				'tremor': '#1e293b',
+				'dndkit': '#000000',
 			},
 			keyframes: {
 				'rotation': {
@@ -42,11 +52,45 @@ export default {
 					'100%': {
 						transform: 'translateY(0px)',
 					}
-				}
+				},
+				'slide': {
+					'0%': {
+					  transform: 'translateX(0%)',
+					},
+					'100%': {
+					  transform: 'translateX(-250px)',
+					}
+				},
+				'loader-time': {
+					'100%': {
+						transform: 'rotate(360deg)'
+					}
+				},
+				'loader-mask': {
+					'0%': {
+						background: '#fafafa',
+						transform: 'rotate(0deg)'
+					},
+					'50%': {
+						background: '#fafafa',
+						transform: 'rotate(-180deg)'
+					},
+					'50.01%': {
+						background: '#5996d5',
+						transform: 'rotate(0deg)'
+					},
+					'100%': {
+						background: '#5996d5',
+						transform: 'rotate(-180deg)'
+					}
+				},
 			},
 			animation: {
 				'rotation': 'rotation 7s infinite linear',
 				'floating': 'floating 2.6s infinite linear',
+				'slide': 'slide 15s infinite linear',
+				'loader-time': 'loader-time 3s linear steps(800,start)',
+				'loader-mask': 'loader-mask 3s steps(250,start)',
 			}
 		},
 	},

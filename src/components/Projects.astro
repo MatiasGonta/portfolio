@@ -1,0 +1,117 @@
+---
+import GitHubIcon from "@icons/social/GitHub.icon.astro";
+import YoutubeIcon from "@icons/social/Youtube.icon.astro";
+import TechBadge from './TechBadge';
+import { projectsData } from "@data/data.ts";
+
+// Number check
+const isEven = (number: number) => number % 2 === 0;
+---
+
+<ul class="w-full flex flex-col items-center gap-32">
+    {
+        projectsData.map((project, index) => (
+            <li class={`card group relative overflow-visible w-[375px] ${isEven(index) ? "sm:self-start" : "sm:self-end"}`}>
+                {/* Divider Circle */}
+                <div class={`hidden absolute size-5 bg-white border border-[#ccc] rounded-full ${isEven(index) ? "-right-[35px]" : "-left-[35px]"} lg:block`}></div>
+
+                <div class="mb-5">
+                    <h3 class="text-primary font-semibold text-[18px] mb-2">{project.name}</h3>
+                    <ul class="flex flex-wrap gap-3">
+                        {
+                            project.technologies.map(({ name, href, icon: Icon, color }) => (
+                                <li class="w-fit">
+                                    <TechBadge name={name} href={href} color={color} client:load >
+                                        <Icon />
+                                    </TechBadge>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+
+                <div class="content w-full h-[250px] transition-transform duration-300 shadow-[0px_0px_10px_1px_#000000ee] rounded">
+                    <div class="back bg-[#151515] absolute size-full rounded overflow-hidden flex justify-center items-center before:absolute before:content-[' '] before:block before:w-[200px] before:h-[190%] before:bg-[linear-gradient(90deg,transparent,#fff,#fff,#fff,#fff,transparent)] before:animate-rotation">
+                        <div class="back-content relative w-[99%] h-[99%] rounded flex justify-center items-center">
+                            <img
+                                src={project.img.src}
+                                alt={project.img.alt}
+                                class="size-full"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="front bg-[#151515] absolute size-full overflow-hidden">
+                        <div class="absolute size-full object-cover object-center">
+                            {/* Background circles */}
+                            <div class="size-[90px] rounded-full bg-primary-light relative blur-[15px] animate-floating" />
+                            <div class="size-[30px] rounded-full bg-primary relative blur-[15px] animate-floating left-[160px] top-[-80px] delay-[-1800ms]" />
+                            <div class="size-[150px] rounded-full bg-[rgb(120,135,150)] relative blur-[15px] animate-floating left-[170px] top-0 -delay-700" />
+                        </div>
+
+                        <div class="absolute size-full p-5 flex justify-between">
+                            <div class="size-full flex justify-between items-cente max-w-[75px]">
+                                <ul class="flex flex-wrap flex-col gap-5 h-[210px]">
+                                    {
+                                        project.technologies.map((tech) => (
+                                            <li class={`transition-all duration-300 size-6 hidden group-hover:block hover:text-${tech.color}`}>
+                                                <tech.icon />
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                            <div class="flex flex-col justify-between w-[240px]">
+                                <div>
+                                    <p class="text-[12px] text-pretty">{project.description}</p>
+                                </div>
+                                <div class="size-fit self-end flex gap-3 items-center">
+                                    <a
+                                        href={project.reviewUrl}
+                                        target="_blank"
+                                        tabindex="-1"
+                                        class="transition-all duration-300 flex gap-2 items-center p-1.5 bg-black border-2 border-black rounded-md text-[12px] text-white hover:bg-red-50 hover:text-[#ff0000] hover:border-[#ff0000]"
+                                    >
+                                        <div class="relative size-4">
+                                            <YoutubeIcon />
+                                        </div>
+                                        <span class="text-nowrap mt-px">Ver review</span>
+                                    </a>
+                                    <a
+                                        href={project.repositoryUrl}
+                                        target="_blank"
+                                        tabindex="-1"
+                                        class="transition-all duration-300 flex gap-2 items-center p-1.5 bg-black border-2 border-black rounded-md text-[12px] text-white hover:bg-white hover:text-black"
+                                    >
+                                        <div class="relative size-4">
+                                            <GitHubIcon />
+                                        </div>
+                                        <span class="text-nowrap mt-px">Ver repositorio</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+        ))
+    }
+</ul>
+
+<style>
+    .content {
+        transform-style: preserve-3d;
+    }
+    .front,
+    .back {
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+    .card:hover .content {
+        transform: rotateY(180deg);
+    }
+    .front {
+        transform: rotateY(180deg);
+    }
+</style>
