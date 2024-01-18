@@ -1,8 +1,8 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { Image } from 'astro:assets';
-import SpanishFlag from '/public/assets/flags/es.svg';
-import EnglishFlag from '/public/assets/flags/gb.svg';
+import SpanishFlag from '../assets/flags/es.svg';
+import EnglishFlag from '../assets/flags/gb.svg';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
