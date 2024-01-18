@@ -40,7 +40,11 @@ export const ui = {
 
         // Contact section translations
         'contact.subtitle': 'Desarrollador y Programador Web',
-        'contact.toast': '¡Gmail copiado en portapapeles!'
+        'contact.toast': '¡Gmail copiado en portapapeles!',
+
+        // Error page
+        'error.message': 'La página que buscás no está disponible.',
+        'error.button': 'Volver',
     },
     en: {
         'document.title': 'Portfolio of Matias Gonta - Web Developer and Programmer',
@@ -76,6 +80,10 @@ export const ui = {
 
         // Contact section translations
         'contact.subtitle': 'Web Developer and Programmer',
-        'contact.toast': 'Gmail copied to clipboard!'
+        'contact.toast': 'Gmail copied to clipboard!',
+
+        // Error page
+        'error.message': 'The page you are looking is not available.',
+        'error.button': 'Back',
     },
 } as const;

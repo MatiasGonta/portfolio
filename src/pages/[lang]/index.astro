@@ -6,10 +6,10 @@ import ProjectsSection from "@components/ProjectsSection.astro";
 import AboutSection from "@components/AboutSection.astro";
 import ContactSection from "@components/ContactSection.astro";
 import { Sections } from "@models/sections";
-import Home from "@icons/section/Home.icon.astro";
-import Projects from "@icons/section/Projects.icon.astro";
-import About from "@icons/section/About.icon.astro";
-import Contact from "@icons/section/Contact.icon.astro";
+import HomeIcon from "@icons/section/Home.icon.astro";
+import ProjectsIcon from "@icons/section/Projects.icon.astro";
+import AboutIcon from "@icons/section/About.icon.astro";
+import ContactIcon from "@icons/section/Contact.icon.astro";
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 
 type NavCircle = {
 	name: string;
-	icon: any;
+	icon: (_props: Record<string, any>) => any;
 	href: Sections;
 	class: string;
 };
@@ -31,25 +31,25 @@ type NavCircle = {
 const scrollNavCircles: NavCircle[] = [
 	{
 		name: t('nav.home'),
-		icon: Home,
+		icon: HomeIcon,
 		href: Sections.HOME,
 		class: "top-7",
 	},
 	{
 		name: t('nav.projects'),
-		icon: Projects,
+		icon: ProjectsIcon,
 		href: Sections.PROJECTS,
 		class: "top-[90px]",
 	},
 	{
 		name: t('nav.about'),
-		icon: About,
+		icon: AboutIcon,
 		href: Sections.ABOUT,
 		class: "bottom-[90px]",
 	},
 	{
 		name: t('nav.contact'),
-		icon: Contact,
+		icon: ContactIcon,
 		href: Sections.CONTACT,
 		class: "bottom-7",
 	},
@@ -60,12 +60,12 @@ const scrollNavCircles: NavCircle[] = [
 	<!-- ScrollNav -->
 	<div id="scroll-nav" class="hidden transition-right duration-300 fixed top-1/2 -translate-y-1/2 invisible opacity-0 h-0 -right-5 xl:block">
 		<div class="relative w-[125px] flex flex-col justify-center items-center">
-			<div class="w-[2px] h-[275px] bg-white rounded-lg"></div>
+			<div class="w-[2px] h-[275px] bg-gray-800 rounded-lg"></div>
 			{
 				scrollNavCircles.map((circle) => (
 					<a
 						href={`#${circle.href}`}
-						class={`group transition-width duration-200 text-nowrap select-none absolute ${circle.class} size-[35px] rounded-full text-primary-light bg-white border border-[#ccc] flex justify-center items-center hover:w-auto hover:px-2.5 hover:right-11`}
+						class={`group transition-width duration-200 text-nowrap select-none absolute ${circle.class} size-[35px] rounded-full text-primary-light bg-gray-800 border border-primary-light flex justify-center items-center hover:w-auto hover:px-2.5 hover:right-11`}
 						tabindex="-1"
 					>
 						<div>
@@ -108,13 +108,28 @@ const scrollNavCircles: NavCircle[] = [
 		[key in Sections]: HTMLElement;
 	}
 
-	enum ScrollDirections {
-		UP = "up",
-		DOWN = "down",
-	}
-
 	// ScrollNav
-	const scrollNav = document.getElementById("scroll-nav")!;
+	const scrollNavRef = document.getElementById("scroll-nav")!;
+
+	const scrollNavCircleHomeRef = document.querySelector(`a[href="#home"]`)!;
+	const scrollNavCircleProjectsRef = document.querySelector(`a[href="#projects"]`)!;
+	const scrollNavCircleAboutRef = document.querySelector(`a[href="#about"]`)!;
+	const scrollNavCircleContactRef= document.querySelector(`a[href="#contact"]`)!;
+
+	let currentSelectedSection: Sections | null = null;
+
+	scrollNavCircleHomeRef.addEventListener('click', () => {
+		currentSelectedSection = Sections.HOME;
+	});
+	scrollNavCircleProjectsRef.addEventListener('click', () => {
+		currentSelectedSection = Sections.PROJECTS;
+	});
+	scrollNavCircleAboutRef.addEventListener('click', () => {
+		currentSelectedSection = Sections.ABOUT;
+	});
+	scrollNavCircleContactRef.addEventListener('click', () => {
+		currentSelectedSection = Sections.CONTACT;
+	});
 
 	// Sections
 	const sections: SectionRefs = {
@@ -124,56 +139,34 @@ const scrollNavCircles: NavCircle[] = [
 		contact: document.getElementById(Sections.CONTACT)!
 	}
 
-	let scrollPositionBeforeHashChange = 0;
-
-	let scrollDirection: ScrollDirections = ScrollDirections.DOWN;
-
-	window.addEventListener("scroll", () => {
-  		const currentScrollPosition = window.scrollY;
-
-		// Handle scroll direction
-  		if (currentScrollPosition > scrollPositionBeforeHashChange) {
-    		scrollDirection = ScrollDirections.DOWN;
-  		} else {
-    		scrollDirection = ScrollDirections.UP;
-  		}
-
-  		scrollPositionBeforeHashChange = currentScrollPosition;
-	});
-
 	const handleObserver = (entries: IntersectionObserverEntry[]) => {
 		entries.forEach((entry: IntersectionObserverEntry) => {
 			console.log(entry)
 			let sectionView = entry.target.id;
 
-			// Storage scrollY position before hash change
-			scrollPositionBeforeHashChange = window.scrollY;
-
-			// Change URL hash only if section is completely in view
-			if (entry.isIntersecting) {
-				if (scrollDirection === ScrollDirections.DOWN) {
-        			window.location.hash = sectionView;
-        			window.scrollTo(0, scrollPositionBeforeHashChange);
-      			}
-      		}
-
 			// Handle visibility of scrollNav
 			if (window.scrollY < 350) {
-				scrollNav.classList.remove("visible","opacity-100","h-auto","right-2",);
-				scrollNav.classList.add("invisible","opacity-0","h-0","-right-5",);
+				scrollNavRef.classList.remove("visible","opacity-100","h-auto","right-2",);
+				scrollNavRef.classList.add("invisible","opacity-0","h-0","-right-5",);
 			} else {
-				scrollNav.classList.add("visible","opacity-100","h-auto","right-2",);
-				scrollNav.classList.remove("invisible","opacity-0","h-0","-right-5",);
+				scrollNavRef.classList.add("visible","opacity-100","h-auto","right-2",);
+				scrollNavRef.classList.remove("invisible","opacity-0","h-0","-right-5",);
 			}
 
 			// Handle scrollNav circle active
 			const scrollNavCircle = document.querySelector(`a[href="#${sectionView}"]`)!;
 
 			if (entry.isIntersecting) {
+				// If the user doesn't manually select a section with scrollNav, update the hash automatically through scroll.
+				if (!currentSelectedSection) window.location.hash = sectionView;
+
+				// If the user manually selects a section, once the scroll redirection is finished, reactivate the automatic hash management.
+				if (currentSelectedSection && sectionView === currentSelectedSection) currentSelectedSection = null;
+
 				scrollNavCircle.classList.remove("text-primary-light");
-				scrollNavCircle.classList.add("text-primary");
+				scrollNavCircle.classList.add("text-[rgb(105,160,214)]");
 			} else {
-				scrollNavCircle.classList.remove("text-primary");
+				scrollNavCircle.classList.remove("text-[rgb(105,160,214)]");
 				scrollNavCircle.classList.add("text-primary-light");
 			}
 		});
