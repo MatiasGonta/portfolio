@@ -171,9 +171,7 @@ const scrollNavCircles: NavCircle[] = [
 			}
 		});
 	};
-	const sectionObservator = new IntersectionObserver(handleObserver, {
-		threshold: 0.15,
-	});
+	const sectionObservator = new IntersectionObserver(handleObserver, { threshold: 0.15 });
 
   	// Observe each section
   	for (const section in sections) {
