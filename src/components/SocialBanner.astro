@@ -9,6 +9,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 type Socials = {
+    name: string;
     bg: string;
     icon: (_props: Record<string, any>) => any;
     href?: string;
@@ -16,21 +17,25 @@ type Socials = {
 
 const socials: Socials[] = [
     {
+        name: 'LinkedIn',
         href: "https://www.linkedin.com/in/matías-gonta/",
         bg: "bg-[#0a66c2]",
         icon: LinkedinIcon,
     },
     {
+        name: 'GitHub',
         href: "https://github.com/MatiasGonta",
         bg: "bg-[#202020]",
         icon: GitHubIcon,
     },
     {
+        name: 'Instagram',
         href: "https://www.instagram.com/matigonta_/",
         bg: 'bg-[#f09433] bg-[-moz-linear-gradient(45deg,#f09433_0%,#e6683c_25%,#dc2743_50%,#cc2366_75%,#bc1888_100%)] bg-[-webkit-linear-gradient(45deg,#f09433_0%,#e6683c_25%,#dc2743_50%,#cc2366_75%,#bc1888_100%)] bg-[linear-gradient(45deg,#f09433_0%,#e6683c_25%,#dc2743_50%,#cc2366_75%,#bc1888_100%)] filter-[progid:DXImageTransform.Microsoft.gradient(startColorstr="#f09433",endColorstr="#bc1888",GradientType=1)]',
         icon: InstagramIcon,
     },
     {
+        name: 'Gmail',
         bg: 'bg-[rgb(64,129,236)] bg-[linear-gradient(45deg,rgba(227,65,51,1)_0%,rgba(191,33,30,1)_25%,rgba(227,65,51,1)_50%,rgba(191,33,30,1)_75%,rgba(227,65,51,1)_100%)] filter-[progid:DXImageTransform.Microsoft.gradient(startColorstr="#e34133",endColorstr="#e34133",GradientType=1)]',
         icon: GmailIcon,
     },
@@ -39,7 +44,7 @@ const socials: Socials[] = [
 
 <div class="flex gap-8 items-center">
     {
-        socials.map(({ href, bg, icon: Icon }) =>
+        socials.map(({ name, href, bg, icon: Icon }) =>
             href ? (
                 <a
                     href={href}
@@ -51,6 +56,7 @@ const socials: Socials[] = [
                             <Icon />
                         </div>
                     </div>
+                    <span class="size-0 absolute opacity-0 pointer-events-none">{name}</span>
                     <div class={`absolute content-[''] size-full z-10 rounded-lg pointer-events-none transition-all duration-300 ${bg} group-hover:rotate-[35deg] group-hover:origin-bottom`} />
                 </a>
             ) : (
@@ -84,6 +90,7 @@ const socials: Socials[] = [
                             </svg>
                         </div>
                     </div>
+                    <span class="size-0 absolute opacity-0 pointer-events-none">{name}</span>
                     <div class={`absolute content-[''] size-full z-10 rounded-lg pointer-events-none transition-all duration-300 ${bg} group-hover:rotate-[35deg] group-hover:origin-bottom`} />
                 </button>
             )
@@ -136,6 +143,7 @@ const socials: Socials[] = [
 
     gmailIconRef.addEventListener("click", () => {
         navigator.clipboard.writeText("maret2023@gmail.com");
+        gmailIconRef.classList.add("pointer-events-none");
         toastRef.classList.remove("invisible", "-bottom-24", "h-0");
         toastRef.classList.add("visible", "bottom-5", "h-[43px]");
         toastLoaderRef.classList.add(
@@ -144,6 +152,7 @@ const socials: Socials[] = [
         );
 
         setTimeout(() => {
+            gmailIconRef.classList.remove("pointer-events-none");
             toastRef.classList.add("invisible", "-bottom-24", "h-0");
             toastRef.classList.remove("visible", "bottom-5", "h-[43px]");
             toastLoaderRef.classList.remove(

@@ -14,51 +14,61 @@ import {
 
 const techs = [
     {
+        name: 'Bootstrap',
         href: "https://getbootstrap.com/",
         style: "bg-bootstrap",
         icon: BootstrapIcon,
     },
     {
+        name: 'MaterialUI',
         href: "https://mui.com/",
         style: "bg-materialui",
         icon: MaterialIcon,
     },
     {
+        name: 'ReactQuery',
         href: "https://tanstack.com/query/latest",
         style: "bg-reactquery",
         icon: ReactQueryIcon,
     },
     {
+        name: 'ReactRouter',
         href: "https://reactrouter.com/en/main",
         style: "bg-reactrouter",
         icon: ReactRouterIcon,
     },
     {
+        name: 'ChartJS',
         href: "https://www.chartjs.org/docs/latest/",
         style: "bg-chartjs",
         icon: ChartJSIcon,
     },
     {
+        name: 'Axios',
         href: "https://axios-http.com/",
         style: "bg-axios",
         icon: AxiosIcon,
     },
     {
+        name: 'Mongoose',
         href: "https://mongoosejs.com/",
         style: "bg-mongoose",
         icon: MongooseIcon,
     },
     {
+        name: 'NextIntl',
         href: "https://next-intl-docs.vercel.app/",
         style: "bg-nextintl",
         icon: NextIntlIcon,
     },
     {
+        name: 'Tremor',
         href: "https://www.tremor.so/",
         style: "bg-tremor",
         icon: TremorIcon,
     },
     {
+        name: 'DndKit',
         href: "https://dndkit.com/",
         style: "bg-dndkit",
         icon: DndKitIcon,
@@ -73,12 +83,13 @@ const techsSecondHalf = [ ...techs.slice(5, 10), ...techs.slice(5, 10) ];
     <div class="flex flex-col justify-center items-center gap-2 w-fit h-full whitespace-nowrap overflow-hidden absolute inset-0">
         <div class="flex justify-center items-center gap-2.5 w-fit animate-slide">
             {
-                techsFirstHalf.map(({ href, style, icon: Icon }) => (
+                techsFirstHalf.map(({ name, href, style, icon: Icon }) => (
                     <a class="size-10 outline-none" href={href} target="_blank" tabindex="-1">
                         <div class="transition-all duration-300 cursor-pointer hover:scale-105">
                             <div class={`size-10 p-1 rounded ${style}`}>
                                 <Icon />
                             </div>
+                            <span class="size-0 absolute opacity-0 pointer-events-none">{name}</span>
                         </div>
                     </a>
                 ))
@@ -86,12 +97,13 @@ const techsSecondHalf = [ ...techs.slice(5, 10), ...techs.slice(5, 10) ];
         </div>
         <div class="flex justify-center items-center gap-2.5 w-fit animate-[slide_21s_infinite_linear]">
             {
-                techsSecondHalf.map(({ href, style, icon: Icon }) => (
+                techsSecondHalf.map(({ name, href, style, icon: Icon }) => (
                     <a class="size-10 outline-none" href={href} target="_blank" tabindex="-1">
                         <div class="transition-all duration-300 cursor-pointer hover:scale-105">
                             <div class={`size-10 p-1 rounded ${style}`}>
                                 <Icon />
                             </div>
+                            <span class="size-0 absolute opacity-0 pointer-events-none">{name}</span>
                         </div>
                     </a>
                 ))
