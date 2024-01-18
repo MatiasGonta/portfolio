@@ -1,5 +1,8 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { Image } from 'astro:assets';
+import SpanishFlag from '/public/assets/flags/es.svg';
+import EnglishFlag from '/public/assets/flags/gb.svg';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -28,7 +31,14 @@ const t = useTranslations(lang);
     <div class="w-1/2 h-full transition-bg duration-300 hover:bg-[#2b3044]">
       <a href="/docs?lang=es" target="_blank" class="size-full flex justify-center items-center gap-1">
         <div class="size-fit h-[19px] overflow-hidden border border-[#ccc] rounded-sm">
-          <img class="w-6 h-5 -mt-[1.5px] select-none" src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="es-flag">
+          <Image
+            src={SpanishFlag}
+            alt="es-flag"
+            width={24}
+            height={20}
+            class="select-none"
+            format="avif"
+          />
         </div>
         <span class="mt-px">{t('about.button.language.es')}</span>
       </a>
@@ -39,7 +49,14 @@ const t = useTranslations(lang);
     <div class="w-1/2 h-full transition-bg duration-300 hover:bg-[#2b3044]">
       <a href="/docs?lang=en" target="_blank" class="size-full flex justify-center items-center gap-1">
         <div class="size-fit h-[19px] overflow-hidden border border-[#ccc] rounded-sm">
-          <img class="w-6 h-5 -mt-[1.5px] select-none" src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="gb-flag">
+          <Image
+            src={EnglishFlag}
+            alt="gb-flag"
+            width={24}
+            height={20}
+            class="select-none"
+            format="avif"
+          />
         </div>
         <span class="mt-px">{t('about.button.language.en')}</span>
       </a>

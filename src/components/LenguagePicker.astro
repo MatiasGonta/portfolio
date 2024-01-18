@@ -1,5 +1,8 @@
 ---
 import { languages } from '../i18n/ui';
+import { Image } from 'astro:assets';
+import SpanishFlag from '/public/assets/flags/es.svg';
+import EnglishFlag from '/public/assets/flags/gb.svg';
 ---
 
 <ul class="w-fit h-full flex gap-5 items-center">
@@ -7,10 +10,13 @@ import { languages } from '../i18n/ui';
         <li>
             <a href={`/${lang}`} class="group size-full flex justify-center items-center gap-1">
                 <div class="relative w-[18px] h-[14px] overflow-hidden border border-[#ccc] rounded-sm">
-                    <img
-                        class="absolute -top-px select-none w-[17px] h-[15px] transition-opacity duration-300 group-hover:opacity-75 group-focus-visible:opacity-75"
-                        src={`https://flagicons.lipis.dev/flags/4x3/${label === 'en' ? 'gb' : lang}.svg`}
+                    <Image
+                        src={label === 'en' ? EnglishFlag : SpanishFlag}
                         alt="gb-flag"
+                        class="absolute select-none transition-opacity duration-300 group-hover:opacity-75 group-focus-visible:opacity-75"
+                        format="avif"
+                        width={17}
+                        height={15}
                     >
                 </div>
                 <span class="transition-color duration-300 group-hover:text-primary-light group-focus-visible:text-primary-light">{label}</span>

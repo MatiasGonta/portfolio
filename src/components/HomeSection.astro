@@ -3,6 +3,8 @@ import LinkedinIcon from "@icons/social/Linkedin.icon.astro";
 import GitHubIcon from "@icons/social/GitHub.icon.astro";
 import InstagramIcon from "@icons/social/Instagram.icon.astro";
 import SocialBadge from "./SocialBadge.astro";
+import ProfileImg from '/public/assets/profile-photo.jpg';
+import { Image } from 'astro:assets';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -13,10 +15,13 @@ const t = useTranslations(lang);
     <div class="w-full h-[350px] flex flex-col justify-end">
         <div class="flex flex-col relative">
             <div>
-                <img
-                    src="/public/assets/profile-photo.jpg"
+                <Image
+                    src={ProfileImg}
                     alt="matias-gonta-profile-photo"
-                    class="w-[50px] h-[50px] object-cover rounded-full select-none"
+                    width={50}
+                    height={50}
+                    class="object-cover rounded-full select-none"
+                    format="avif"
                 />
             </div>
 
