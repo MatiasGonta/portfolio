@@ -298,11 +298,11 @@ export const DndKitIcon = () => {
                 width="100%"
                 height="100%"
                 viewBox="0 0 24 24"
-                stroke-width="1"
+                strokeWidth="1"
                 stroke="currentColor"
                 fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M16 4l4 0l0 4" />
