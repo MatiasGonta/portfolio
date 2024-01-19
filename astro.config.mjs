@@ -13,6 +13,5 @@ export default defineConfig({
   adapter: vercel({
     imageService: true,
     devImageService: 'sharp',
-    includeFiles: ['./src/pages/[lang]/resume.astro'],
   })
 });
