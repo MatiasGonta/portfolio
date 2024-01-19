@@ -1,7 +1,11 @@
 {
     "framework": "astro",
     "installCommand": "pnpm install",
-    "redirects": [
-        { "source": "/", "destination": "/es", "statusCode": 301 }
+    "routes": [
+        {
+          "src": "/",
+          "headers": { "Location": "/es" },
+          "status": 307
+        }
     ]
 }
