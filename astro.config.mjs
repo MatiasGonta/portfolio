@@ -14,5 +14,10 @@ export default defineConfig({
     imageService: true,
     devImageService: 'sharp',
     includeFiles: ['./src/pages/index.astro','./src/pages/resume.astro'],
-  })
+  }),
+  build: {
+    rollupOptions: {
+      external: ['@components/Header.astro'],
+    },
+  },
 });
