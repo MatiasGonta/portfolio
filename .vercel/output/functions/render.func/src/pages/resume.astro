@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+
+const docLang = Astro.url.searchParams.get("lang")!;
+
+const docLangOptions = ["es", "en"];
+
+if (!docLang || !docLangOptions.includes(docLang)) {
+    return Astro.redirect("/");
+}
+---
+
+<Layout title="Matias Gonta - Curriculum Vitae" lang={lang}>
+    <div class="absolute size-full">
+        <object
+            data=`/public/docs/CV-${docLang}.pdf`
+            type="application/pdf"
+            width="100%"
+            height="100%"
+        ></object>
+    </div>
+</Layout>
