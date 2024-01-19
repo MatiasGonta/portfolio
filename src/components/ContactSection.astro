@@ -3,7 +3,7 @@ import ContactIcon from '@icons/section/Contact.icon.astro';
 import SocialBanner from './SocialBanner.astro';
 import { Image } from 'astro:assets';
 import ProfileImg from '../assets/profile-photo.jpg';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

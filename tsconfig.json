@@ -4,6 +4,8 @@
     "baseUrl": "C:/Users/maret/OneDrive/Escritorio/Cursos Development/Proyects/portfolio",
     "jsx": "react-jsx",
     "paths": {
+      "@layouts/*": ["./src/layouts/*"],
+      "@i18n/*": ["./src/i18n/*"],
       "@components/*": ["./src/components/*"],
       "@models/*": ["./src/models/*"],
       "@icons/*": ["./src/icons/*"],

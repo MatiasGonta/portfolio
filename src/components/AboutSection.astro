@@ -1,7 +1,7 @@
 ---
 import AboutIcon from '@icons/section/About.icon.astro';
-import DocsButton from './DocsButton.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import ResumeButton from './ResumeButton.astro';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -18,6 +18,6 @@ const t = useTranslations(lang);
     </div>
     <div class="my-5 flex flex-col gap-2.5">
         <p>{t('about.description')}</p>
-        <DocsButton>{t('about.button')}</DocsButton>
+        <ResumeButton>{t('about.button')}</ResumeButton>
     </div>
 </article>

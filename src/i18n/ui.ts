@@ -42,6 +42,9 @@ export const ui = {
         'contact.subtitle': 'Desarrollador y Programador Web',
         'contact.toast': '¡Gmail copiado en portapapeles!',
 
+        // Resume page
+        'resume.title': 'Portfolio de Matias Gonta - Curriculum Vitae',
+
         // Error page
         'error.message': 'La página que buscás no está disponible.',
         'error.button': 'Volver',
@@ -81,6 +84,9 @@ export const ui = {
         // Contact section translations
         'contact.subtitle': 'Web Developer and Programmer',
         'contact.toast': 'Gmail copied to clipboard!',
+
+        // Resume page
+        'resume.title': 'Portfolio of Matias Gonta - Curriculum Vitae',
 
         // Error page
         'error.message': 'The page you are looking is not available.',

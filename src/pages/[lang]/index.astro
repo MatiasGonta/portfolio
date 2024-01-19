@@ -1,6 +1,6 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Header from "../../components/Header.astro";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
 import HomeSection from "@components/HomeSection.astro";
 import ProjectsSection from "@components/ProjectsSection.astro";
 import AboutSection from "@components/AboutSection.astro";
@@ -10,7 +10,7 @@ import HomeIcon from "@icons/section/Home.icon.astro";
 import ProjectsIcon from "@icons/section/Projects.icon.astro";
 import AboutIcon from "@icons/section/About.icon.astro";
 import ContactIcon from "@icons/section/Contact.icon.astro";
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -81,6 +81,8 @@ const scrollNavCircles: NavCircle[] = [
 	</div>
 
 	<main class="mx-auto w-full text-white text-[16px] leading-normal">
+		<div class="my-[200px] text-center text.white">{Astro.preferredLocale}</div>
+
 		<Header />
 
 		<section id={Sections.HOME} class="w-full h-auto max-w-[800px] mx-auto">
@@ -141,7 +143,6 @@ const scrollNavCircles: NavCircle[] = [
 
 	const handleObserver = (entries: IntersectionObserverEntry[]) => {
 		entries.forEach((entry: IntersectionObserverEntry) => {
-			console.log(entry)
 			let sectionView = entry.target.id;
 
 			// Handle visibility of scrollNav

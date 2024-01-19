@@ -115,7 +115,7 @@ export const projectsData = [
         name: "CECLA 6626",
         description: 'projects.cecla6626.description',
         img: {
-            src: CECLA6626Img,
+            src: CECLA6626Img.src,
             alt: "CECLA6626-mockup",
         },
         reviewUrl: "https://www.youtube.com/watch?v=JaWBVzGBzH8",
@@ -130,7 +130,7 @@ export const projectsData = [
         name: "Sabrina",
         description: 'projects.sabrina.description',
         img: {
-            src: SabrinaImg,
+            src: SabrinaImg.src,
             alt: "sabrina-mockup",
         },
         reviewUrl: "https://www.youtube.com/watch?v=NwSAmoBntyc",
@@ -149,7 +149,7 @@ export const projectsData = [
         name: "Sunshine Weather",
         description: 'projects.sunshine-weather.description',
         img: {
-            src: SunshineWeatherImg,
+            src: SunshineWeatherImg.src,
             alt: "sunshine-weather-mockup",
         },
         reviewUrl: "",
@@ -164,7 +164,7 @@ export const projectsData = [
         name: "The Exchange Corner",
         description: 'projects.the-exchange-corner.description',
         img: {
-            src: TheExchangeCornerImg,
+            src: TheExchangeCornerImg.src,
             alt: "the-exchange-corner-mockup",
         },
         reviewUrl: "https://www.youtube.com/watch?v=CRLlMPW1qUM",
@@ -180,7 +180,7 @@ export const projectsData = [
         name: "Puzzle Home",
         description: 'projects.puzzle-home.description',
         img: {
-            src: PuzzleHomeImg,
+            src: PuzzleHomeImg.src,
             alt: "puzzle-home-mockup",
         },
         reviewUrl: "https://www.youtube.com/watch?v=4hoPhppO8EE",
@@ -195,7 +195,7 @@ export const projectsData = [
         name: "minDDraw",
         description: 'projects.minddraw.description',
         img: {
-            src: MinddrawImg,
+            src: MinddrawImg.src,
             alt: "minDDraw-mockup",
         },
         reviewUrl: "https://www.youtube.com/watch?v=yS0JPU53X7o",
@@ -210,7 +210,7 @@ export const projectsData = [
         name: "Tech Flip",
         description: 'projects.techflip.description',
         img: {
-            src: TechFlipImg,
+            src: TechFlipImg.src,
             alt: "tech-flip-mockup",
         },
         reviewUrl: "",
