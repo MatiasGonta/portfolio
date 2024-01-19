@@ -7,6 +7,7 @@
       "@components/*": ["./src/components/*"],
       "@models/*": ["./src/models/*"],
       "@icons/*": ["./src/icons/*"],
+      "@assets/*": ["./src/assets/*"],
       "@data/*": ["./src/data/*"],
     },
     "jsxImportSource": "react"

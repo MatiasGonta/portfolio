@@ -14,6 +14,13 @@ import {
     MongoDBIcon,
     NextjsIcon
 } from "@icons/tech/TechIcons";
+import CECLA6626Img from "@assets/projectMockups/CECLA6626-mockup.png";
+import SabrinaImg from "@assets/projectMockups/sabrina-mockup.png";
+import SunshineWeatherImg from "@assets/projectMockups/sunshine-weather-mockup.png";
+import TheExchangeCornerImg from "@assets/projectMockups/the-exchange-corner-mockup.png";
+import PuzzleHomeImg from "@assets/projectMockups/puzzle-home-mockup.png";
+import MinddrawImg from "@assets/projectMockups/minDDraw-mockup.png";
+import TechFlipImg from "@assets/projectMockups/tech-flip-mockup.png";
 import { Technologies } from "@models/technologies";
 
 export const technologiesData = [
@@ -108,7 +115,7 @@ export const projectsData = [
         name: "CECLA 6626",
         description: 'projects.cecla6626.description',
         img: {
-            src: "/src/assets/projectMockups/CECLA6626-mockup.png",
+            src: CECLA6626Img,
             alt: "CECLA6626-mockup",
         },
         reviewUrl: "https://www.youtube.com/watch?v=JaWBVzGBzH8",
@@ -123,7 +130,7 @@ export const projectsData = [
         name: "Sabrina",
         description: 'projects.sabrina.description',
         img: {
-            src: "/src/assets/projectMockups/sabrina-mockup.png",
+            src: SabrinaImg,
             alt: "sabrina-mockup",
         },
         reviewUrl: "https://www.youtube.com/watch?v=NwSAmoBntyc",
@@ -142,7 +149,7 @@ export const projectsData = [
         name: "Sunshine Weather",
         description: 'projects.sunshine-weather.description',
         img: {
-            src: "/src/assets/projectMockups/sunshine-weather-mockup.png",
+            src: SunshineWeatherImg,
             alt: "sunshine-weather-mockup",
         },
         reviewUrl: "",
@@ -157,7 +164,7 @@ export const projectsData = [
         name: "The Exchange Corner",
         description: 'projects.the-exchange-corner.description',
         img: {
-            src: "/src/assets/projectMockups/the-exchange-corner-mockup.png",
+            src: TheExchangeCornerImg,
             alt: "the-exchange-corner-mockup",
         },
         reviewUrl: "https://www.youtube.com/watch?v=CRLlMPW1qUM",
@@ -173,7 +180,7 @@ export const projectsData = [
         name: "Puzzle Home",
         description: 'projects.puzzle-home.description',
         img: {
-            src: "/src/assets/projectMockups/puzzle-home-mockup.png",
+            src: PuzzleHomeImg,
             alt: "puzzle-home-mockup",
         },
         reviewUrl: "https://www.youtube.com/watch?v=4hoPhppO8EE",
@@ -188,7 +195,7 @@ export const projectsData = [
         name: "minDDraw",
         description: 'projects.minddraw.description',
         img: {
-            src: "/src/assets/projectMockups/minDDraw-mockup.png",
+            src: MinddrawImg,
             alt: "minDDraw-mockup",
         },
         reviewUrl: "https://www.youtube.com/watch?v=yS0JPU53X7o",
@@ -203,7 +210,7 @@ export const projectsData = [
         name: "Tech Flip",
         description: 'projects.techflip.description',
         img: {
-            src: "/src/assets/projectMockups/tech-flip-mockup.png",
+            src: TechFlipImg,
             alt: "tech-flip-mockup",
         },
         reviewUrl: "",
