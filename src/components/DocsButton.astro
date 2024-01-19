@@ -29,7 +29,7 @@ const t = useTranslations(lang);
 
   <div class="transition-top duration-200 flex items-center w-full h-[52px] invisible overflow-hidden absolute top-0 z-10 peer-hover:top-[52px] hover:top-[52px] peer-hover:visible hover:visible peer-hover:bg-[#3a4058] hover:bg-[#3a4058] rounded-b">
     <div class="w-1/2 h-full transition-bg duration-300 hover:bg-[#2b3044]">
-      <a href="/resume?lang=es" target="_blank" class="size-full flex justify-center items-center gap-1">
+      <a href={`/${lang}/resume?lang=es`} target="_blank" class="size-full flex justify-center items-center gap-1">
         <div class="size-fit h-[19px] overflow-hidden border border-[#ccc] rounded-sm">
           <Image
             src={SpanishFlag}
@@ -47,7 +47,7 @@ const t = useTranslations(lang);
     <div class="w-0.5 h-5/6 bg-[#404660]"></div>
 
     <div class="w-1/2 h-full transition-bg duration-300 hover:bg-[#2b3044]">
-      <a href="/resume?lang=en" target="_blank" class="size-full flex justify-center items-center gap-1">
+      <a href={`/${lang}/resume?lang=en`} target="_blank" class="size-full flex justify-center items-center gap-1">
         <div class="size-fit h-[19px] overflow-hidden border border-[#ccc] rounded-sm">
           <Image
             src={EnglishFlag}
