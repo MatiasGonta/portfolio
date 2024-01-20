@@ -13,11 +13,9 @@ export async function getStaticPaths() {
 
 const docLangOptions = ["es", "en"];
 
-const docLang = Astro.url.searchParams.get("lang")!;
+const docLangParam = Astro.url.searchParams.get("language")!;
 
-if (!docLang || !docLangOptions.includes(docLang)) {
-    return Astro.redirect(`/${lang}`);
-}
+const docLang = docLangParam && docLangOptions.includes(docLangParam) ? docLangParam : lang;
 ---
 
 <Layout title={t("resume.title")} lang={lang}>

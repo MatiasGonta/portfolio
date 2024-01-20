@@ -170,10 +170,15 @@ const scrollNavCircles: NavCircle[] = [
 			}
 		});
 	};
-	const sectionObservator = new IntersectionObserver(handleObserver, { threshold: 0.15 });
+	const sectionObservatorDefault = new IntersectionObserver(handleObserver, { threshold: 0.75 });
 
-  	// Observe each section
-  	for (const section in sections) {
-		sectionObservator.observe(sections[section as keyof SectionRefs]);
-  	}
+	for (const section in sections) {
+	  	if (section !== Sections.PROJECTS) {
+	    	sectionObservatorDefault.observe(sections[section as keyof SectionRefs]);
+	  	}
+	}
+
+	// Observa la sección "projects" con threshold 0.15
+	const sectionObservatorProjects = new IntersectionObserver(handleObserver, { threshold: 0.15 });
+	sectionObservatorProjects.observe(sections.projects);
 </script>
