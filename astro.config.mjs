@@ -13,5 +13,8 @@ export default defineConfig({
   adapter: vercel({
     imageService: true,
     devImageService: 'sharp',
-  })
+  }),
+  pages: {
+    '/pages/[lang]/resume.astro': ['src/pages/[lang]/resume.astro'],
+  },
 });

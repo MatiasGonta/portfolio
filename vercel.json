@@ -1,0 +1,8 @@
+{
+    "routes": [
+        {
+            "src": "/:lang/resume",
+            "dest": "/resume.astro"
+        }
+    ]
+}

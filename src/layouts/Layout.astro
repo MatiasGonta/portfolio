@@ -1,5 +1,7 @@
 ---
 import "@fontsource-variable/onest";
+import DocumentIcon from "/public/profile-photo.ico";
+
 interface Props {
 	title: string;
 	lang: 'es' | 'en';
@@ -14,7 +16,7 @@ const { title, lang } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Matías Gonta - Desarrollador y Programador Web especializado en tecnologías como React, JavaScript y más. Explora mi portfolio para conocer mis habilidades y proyectos." />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/icon" href="/public/profile-photo.ico" />
+		<link rel="icon" type="image/icon" href={DocumentIcon} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
