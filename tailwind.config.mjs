@@ -32,6 +32,14 @@ export default {
 				'nextintl': '#5fc3e7',
 				'tremor': '#1e293b',
 				'dndkit': '#000000',
+				'jwt': '#000000',
+				'reacthookform': '#ec5990',
+				'zod': '#3e67b1',
+				'resend': '#000000',
+				'sonner': '#fff',
+				'tailwindmerge': '#6366F1',
+				'lucidereact': '#1b1b1f',
+				'shadcnui': '#000000',
 			},
 			keyframes: {
 				'rotation': {
@@ -55,10 +63,10 @@ export default {
 				},
 				'slide': {
 					'0%': {
-					  transform: 'translateX(0%)',
+					  	transform: 'translateX(0%)',
 					},
 					'100%': {
-					  transform: 'translateX(-250px)',
+						transform: 'translateX(-450px)',
 					}
 				},
 				'loader-time': {

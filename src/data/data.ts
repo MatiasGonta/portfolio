@@ -18,6 +18,7 @@ import CECLA6626Img from "@assets/projectMockups/CECLA6626-mockup.png";
 import SabrinaImg from "@assets/projectMockups/sabrina-mockup.png";
 import SunshineWeatherImg from "@assets/projectMockups/sunshine-weather-mockup.png";
 import TheExchangeCornerImg from "@assets/projectMockups/the-exchange-corner-mockup.png";
+import TinyTargetImg from "@assets/projectMockups/tiny-target-mockup.png";
 import PuzzleHomeImg from "@assets/projectMockups/puzzle-home-mockup.png";
 import MinddrawImg from "@assets/projectMockups/minDDraw-mockup.png";
 import TechFlipImg from "@assets/projectMockups/tech-flip-mockup.png";
@@ -121,6 +122,7 @@ export const projectsData = [
         reviewUrl: "https://www.youtube.com/watch?v=JaWBVzGBzH8",
         repositoryUrl: "https://github.com/MatiasGonta/CECLA-6626",
         technologies: [
+            { name: Technologies.NODE, href: "https://nodejs.org/", color: "node", icon: NodeJSIcon },
             { name: Technologies.TYPESCRIPT, href: "https://www.typescriptlang.org/", color: "typescript", icon: TypeScriptIcon },
             { name: Technologies.ASTRO, href: "https://astro.build/", color: "astro", icon: AstroIcon },
             { name: Technologies.TAILWIND, href: "https://tailwindcss.com/", color: "tailwindcss", icon: TailwindIcon },
@@ -133,7 +135,7 @@ export const projectsData = [
             src: SabrinaImg.src,
             alt: "sabrina-mockup",
         },
-        reviewUrl: "https://www.youtube.com/watch?v=NwSAmoBntyc",
+        reviewUrl: "https://www.youtube.com/watch?v=IqG6XkRNoLI",
         repositoryUrl: "https://github.com/MatiasGonta/sabrina-ecommerce-fullstack-app",
         technologies: [
             { name: Technologies.NODE, href: "https://nodejs.org/", color: "node", icon: NodeJSIcon },
@@ -152,9 +154,11 @@ export const projectsData = [
             src: SunshineWeatherImg.src,
             alt: "sunshine-weather-mockup",
         },
-        reviewUrl: "",
-        repositoryUrl: "https://github.com/MatiasGonta/sunshine-weather-react-ts-sass",
+        websiteUrl: "https://sunshineweatherapp.netlify.app/",
+        reviewUrl: "https://www.youtube.com/watch?v=k33xxxwPNss",
+        repositoryUrl: "https://github.com/MatiasGonta/sunshine-weather",
         technologies: [
+            { name: Technologies.NODE, href: "https://nodejs.org/", color: "node", icon: NodeJSIcon },
             { name: Technologies.TYPESCRIPT, href: "https://www.typescriptlang.org/", color: "typescript", icon: TypeScriptIcon },
             { name: Technologies.REACT, href: "https://react.dev/", color: "react", icon: ReactIcon },
             { name: Technologies.SASS, href: "https://sass-lang.com/", color: "sass", icon: SassIcon },
@@ -170,6 +174,26 @@ export const projectsData = [
         reviewUrl: "https://www.youtube.com/watch?v=CRLlMPW1qUM",
         repositoryUrl: "https://github.com/MatiasGonta/the-exchange-corner",
         technologies: [
+            { name: Technologies.NODE, href: "https://nodejs.org/", color: "node", icon: NodeJSIcon },
+            { name: Technologies.TYPESCRIPT, href: "https://www.typescriptlang.org/", color: "typescript", icon: TypeScriptIcon },
+            { name: Technologies.REACT, href: "https://react.dev/", color: "react", icon: ReactIcon },
+            { name: Technologies.NEXTJS, href: "https://nextjs.org/", color: "nextjs", icon: NextjsIcon },
+            { name: Technologies.TAILWIND, href: "https://tailwindcss.com/", color: "tailwindcss", icon: TailwindIcon },
+        ],
+    },
+    {
+        name: "Tiny Target",
+        description: 'projects.tiny-target.description',
+        img: {
+            src: TinyTargetImg.src,
+            alt: "tiny-target-mockup",
+        },
+        reviewUrl: "https://www.youtube.com/watch?v=EkUeTFaJWzI",
+        repositoryUrl: "https://github.com/MatiasGonta/tiny-target",
+        websiteUrl: "https://tinytarget.vercel.app/",
+        technologies: [
+            { name: Technologies.NODE, href: "https://nodejs.org/", color: "node", icon: NodeJSIcon },
+            { name: Technologies.MONGODB, href: "https://www.mongodb.com/", color: "mongodb", icon: MongoDBIcon },
             { name: Technologies.TYPESCRIPT, href: "https://www.typescriptlang.org/", color: "typescript", icon: TypeScriptIcon },
             { name: Technologies.REACT, href: "https://react.dev/", color: "react", icon: ReactIcon },
             { name: Technologies.NEXTJS, href: "https://nextjs.org/", color: "nextjs", icon: NextjsIcon },
@@ -186,6 +210,7 @@ export const projectsData = [
         reviewUrl: "https://www.youtube.com/watch?v=4hoPhppO8EE",
         repositoryUrl: "https://github.com/MatiasGonta/puzzle-home-react-ts-sass",
         technologies: [
+            { name: Technologies.NODE, href: "https://nodejs.org/", color: "node", icon: NodeJSIcon },
             { name: Technologies.TYPESCRIPT, href: "https://www.typescriptlang.org/", color: "typescript", icon: TypeScriptIcon },
             { name: Technologies.REACT, href: "https://react.dev/", color: "react", icon: ReactIcon },
             { name: Technologies.SASS, href: "https://sass-lang.com/", color: "sass", icon: SassIcon },
@@ -199,7 +224,8 @@ export const projectsData = [
             alt: "minDDraw-mockup",
         },
         reviewUrl: "https://www.youtube.com/watch?v=yS0JPU53X7o",
-        repositoryUrl: "https://github.com/MatiasGonta/minDDraw-html-css-js",
+        repositoryUrl: "https://github.com/MatiasGonta/minDDraw",
+        websiteUrl: "https://matiasgonta.github.io/minDDraw/",
         technologies: [
             { name: Technologies.HTML, href: "https://developer.mozilla.org/es/docs/Web/HTML", color: "html", icon: HtmlIcon },
             { name: Technologies.CSS, href: "https://developer.mozilla.org/es/docs/Web/CSS", color: "css", icon: CssIcon },
@@ -213,8 +239,9 @@ export const projectsData = [
             src: TechFlipImg.src,
             alt: "tech-flip-mockup",
         },
-        reviewUrl: "",
-        repositoryUrl: "https://github.com/MatiasGonta/tech-flip-game-html-css-js",
+        websiteUrl: "https://matiasgonta.github.io/tech-flip/",
+        reviewUrl: "https://www.youtube.com/watch?v=B-6JigCXSxI",
+        repositoryUrl: "https://github.com/MatiasGonta/tech-flip",
         technologies: [
             { name: Technologies.HTML, href: "https://developer.mozilla.org/es/docs/Web/HTML", color: "html", icon: HtmlIcon },
             { name: Technologies.CSS, href: "https://developer.mozilla.org/es/docs/Web/CSS", color: "css", icon: CssIcon },

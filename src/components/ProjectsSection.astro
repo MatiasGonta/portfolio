@@ -3,27 +3,30 @@ import TechNav from "./TechNav.tsx";
 import ProjectsIcon from "@icons/section/Projects.icon.astro";
 import TechReel from "./TechReel.astro";
 import Projects from "./Projects.astro";
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<article class="relative overflow-hidden px-7 lg:px-0">
-    <TechReel />
+<article>
+    <div class="relative w-full overflow-hidden px-7 lg:px-0">
+        <TechReel />
 
-    <div class="text-[25px] flex items-center">
-        <div class="text-primary">
-            <ProjectsIcon />
+        <div class="text-[25px] flex items-center">
+            <div class="text-primary">
+                <ProjectsIcon />
+            </div>
+            <h2 class="ml-3">{t("nav.projects")}</h2>
         </div>
-        <h2 class="ml-3">{t('nav.projects')}</h2>
-    </div>
-    <div class="my-8 relative z-50">
-        <TechNav client:load />
+        <div class="my-8 relative z-50">
+            <TechNav client:load />
+        </div>
     </div>
     <div class="relative w-full flex justify-center pt-[50px]">
         {/* Divider */}
-        <div class="hidden absolute bg-white w-0.5 h-full rounded-lg lg:block"></div>
+        <div class="hidden absolute bg-white w-0.5 h-full rounded-lg lg:block">
+        </div>
 
         <Projects />
     </div>

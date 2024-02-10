@@ -1,6 +1,7 @@
 ---
 import GitHubIcon from "@icons/social/GitHub.icon.astro";
 import YoutubeIcon from "@icons/social/Youtube.icon.astro";
+import WebsiteLink from "@icons/social/WebsiteLink.icon.astro";
 import TechBadge from './TechBadge';
 import { projectsData } from "@data/data.ts";
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
@@ -13,7 +14,7 @@ const t = useTranslations(lang);
 const isEven = (number: number) => number % 2 === 0;
 ---
 
-<ul class="w-full flex flex-col items-center gap-32">
+<ul class="w-full flex flex-col items-center gap-32 overflow-visible">
     {
         projectsData.map((project, index) => (
             <li class={`card group relative overflow-visible w-[375px] ${isEven(index) ? "sm:self-start" : "sm:self-end"}`}>
@@ -74,6 +75,22 @@ const isEven = (number: number) => number % 2 === 0;
                                     <p class="text-[12px] text-pretty">{t(project.description)}</p>
                                 </div>
                                 <div class="size-fit self-end flex gap-3 items-center">
+                                    {
+                                        project.websiteUrl &&
+                                        <a
+                                            href={project.websiteUrl}
+                                            target="_blank"
+                                            tabindex="-1"
+                                            class="w-8 max-w-8 h-[35px] relative overflow-hidden transition-all duration-300 flex gap-2 items-center p-1.5 bg-black border-2 border-black rounded-md text-[12px] text-white hover:bg-red-50 hover:text-[#404040] hover:border-[#bbb]"
+                                        >
+                                            <div class="relative size-4">
+                                                <WebsiteLink/>
+                                            </div>
+                                            <span class="absolute -right-20 pointer-events-none">
+                                                {t('projects.buttons.website')}
+                                            </span>
+                                        </a>
+                                    }
                                     <a
                                         href={project.reviewUrl}
                                         target="_blank"

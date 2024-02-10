@@ -20,14 +20,16 @@ export const ui = {
         'home.description': 'Desarrollador y Programador Web. De Cañada de Gomez, Santa Fe, Argentina.',
 
         // Projects section translations
-        'projects.buttons.youtube': 'Ver review',
-        'projects.buttons.github': 'Ver repositorio',
+        'projects.buttons.website': 'Página web',
+        'projects.buttons.youtube': 'Review',
+        'projects.buttons.github': 'Repositorio',
 
         // Projects descriptions
         'projects.cecla6626.description': '"CECLA 6626" es una versión modernizada del sitio web existente del Centro de Formación Laboral 6626, Brigadier General Estanislao López (CECLA 6626), aprovechando Astro y Tailwind para mejorar tanto la experiencia del usuario (UX) como la interfaz del usuario (UI).',
         'projects.sabrina.description': 'Sabrina es un ecommerce full-stack de ropa. Cuenta con 25 páginas, como Inicio, ProductsPage con catálogo de productos, CartPage y un Dashboard al que solo pueden acceder los administradores a diversas estadísticas, tablas de pedidos, productos y usuarios, permitiendoles realizar operaciones como eliminación, actualización y creación (CRUD).',
         'projects.sunshine-weather.description': 'Sunshine Weather es una aplicación web que proporciona información meteorológica para cualquier lugar del mundo. Los usuarios pueden buscar fácilmente una ciudad o país y obtener actualizaciones meteorológicas en tiempo real, incluida la temperatura, la humedad, la velocidad del viento y una descripción.',
         'projects.the-exchange-corner.description': 'Exchange Corner es una aplicación web que ofrece conversión de moneda y obtención de tipos de cambio históricos. Los usuarios pueden realizar conversiones de divisas, explorar tipos de cambio históricos y agregar sus pares de divisas favoritos.',
+        'projects.tiny-target.description': 'Tiny Target es una aplicación de acortamiento de URL. Los usuarios tienen la posibilidad de crear URL personalizadas de forma gratuita, asignándoles alias personalizados. Además, tienen un panel de control donde pueden ver todas las URL creadas, así como editarlas, eliminarlas y copiarlas para su uso conveniente.',
         'projects.puzzle-home.description': 'Puzzle Home es una página web que ofrece una colección de rompecabezas para que los usuarios disfruten y desafíen sus habilidades de resolución. El proyecto se desarrolla utilizando React, TypeScript y la biblioteca DndKit, para la interacción de soltar y arrastrar (drag and drop), logrando una funcionalidad fluida.',
         'projects.minddraw.description': 'minDDraw es un sitio web de dibujo que permite a los usuarios dar rienda suelta a su creatividad y crear obras de arte digitales.',
         'projects.techflip.description': 'Tech Flip es un juego de tarjetas de memoria basado en el tema del lenguaje de programación. Proporciona una interfaz simple donde los usuarios pueden probar sus habilidades de memoria volteando cartas y emparejando pares.',
@@ -63,14 +65,16 @@ export const ui = {
         'home.description': 'Web Developer and Programmer. From Cañada de Gomez, Santa Fe, Argentina.',
 
         // Projects section translations
-        'projects.buttons.youtube': 'Watch review',
-        'projects.buttons.github': 'Watch repository',
+        'projects.buttons.website': 'Website',
+        'projects.buttons.youtube': 'Review',
+        'projects.buttons.github': 'Repository',
         
         // Projects descriptions
         'projects.cecla6626.description': '"CECLA 6626" is a modernized version of the existing website of the Labor Training Center 6626, Brigadier General Estanislao López (CECLA 6626), leveraging Astro and Tailwind to improve both the user experience (UX) and user interface (UI).',
         'projects.sabrina.description': 'Sabrina is a full-stack clothing ecommerce. It has 25 pages, such as Home, ProductsPage with product catalog, CartPage and a Dashboard where only administrators can access to statistics, order tables, products and users, allowing them to perform operations such as deletion, update and creation (CRUD).',
         'projects.sunshine-weather.description': 'Sunshine Weather is a web application that provides weather information for any location in the world. Users can easily search for a city or country and get real-time weather updates, including temperature, humidity, wind speed, and a description.',
         'projects.the-exchange-corner.description': 'Exchange Corner is a web application that offers currency conversion and obtaining historical exchange rates. Users can perform currency conversions, explore historical exchange rates, and add their favorite currency pairs.',
+        'projects.tiny-target.description': 'Tiny Target is a URL shortening application. Users have the ability to create custom URLs for free, assigning them personalized aliases. Additionally, they have a dashboard where they can view all created URLs, as well as edit, delete, and copy them for convenient use.',
         'projects.puzzle-home.description': 'Puzzle Home is a website that offers a collection of puzzles for users to enjoy and challenge their solving skills. The project is developed using React, TypeScript and the DndKit library, for drag and drop interaction, providing seamless functionality.',
         'projects.minddraw.description': 'minDDraw is a drawing website which allows users to unleash their creativity and create digital works of art.',
         'projects.techflip.description': 'Tech Flip is a memory card flip match game based on the programming language theme. It provides a simple interface where users can test their memory skills by flipping cards and matching pairs.',

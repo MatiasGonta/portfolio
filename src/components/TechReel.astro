@@ -10,6 +10,14 @@ import {
     NextIntlIcon,
     TremorIcon,
     DndKitIcon,
+    JWTIcon,
+    ReactHookFormIcon,
+    ZodIcon,
+    ResendIcon,
+    SonnerIcon,
+    TailwindMergeIcon,
+    LucideReactIcon,
+    ShadcnuiIcon,
 } from "@icons/tech/TechIcons";
 
 const techs = [
@@ -44,6 +52,30 @@ const techs = [
         icon: ChartJSIcon,
     },
     {
+        name: 'Zod',
+        href: "https://reactjs.org/",
+        style: "bg-zod",
+        icon: ZodIcon,
+    },
+    {
+        name: 'Resend',
+        href: "https://resend.com/",
+        style: "bg-resend",
+        icon: ResendIcon,
+    },
+    {
+        name: 'Tailwind Merge',
+        href: "https://www.npmjs.com/package/tailwind-merge",
+        style: "bg-tailwindmerge",
+        icon: TailwindMergeIcon,
+    },
+    {
+        name: 'Lucide React',
+        href: "https://lucide.dev/guide/packages/lucide-react",
+        style: "bg-lucidereact",
+        icon: LucideReactIcon,
+    },
+    {
         name: 'Axios',
         href: "https://axios-http.com/",
         style: "bg-axios",
@@ -73,10 +105,34 @@ const techs = [
         style: "bg-dndkit",
         icon: DndKitIcon,
     },
+    {
+        name: 'JWT',
+        href: "https://jwt.io/",
+        style: "bg-jwt",
+        icon: JWTIcon,
+    },
+    {
+        name: 'React Hook Form',
+        href: "https://react-hook-form.com/",
+        style: "bg-reacthookform",
+        icon: ReactHookFormIcon,
+    },
+    {
+        name: 'Sonner',
+        href: "https://sonner.emilkowal.ski/",
+        style: "bg-sonner",
+        icon: SonnerIcon,
+    },
+    {
+        name: 'Shadcn/ui',
+        href: "https://ui.shadcn.com/",
+        style: "bg-shadcnui",
+        icon: ShadcnuiIcon,
+    }
 ];
 
-const techsFirstHalf = [ ...techs.slice(0, 5), ...techs.slice(0, 5) ];
-const techsSecondHalf = [ ...techs.slice(5, 10), ...techs.slice(5, 10) ];
+const techsFirstHalf = [ ...techs.slice(0, 9), ...techs.slice(0, 9) ];
+const techsSecondHalf = [ ...techs.slice(9), ...techs.slice(9) ];
 ---
 
 <div class="flex flex-col justify-start gap-4 w-[250px] h-[100px] rotate-45 absolute -top-5 -right-20 overflow-hidden rounded-xl z-10">
