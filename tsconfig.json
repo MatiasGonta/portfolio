@@ -1,8 +1,8 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "C:/Users/maret/OneDrive/Escritorio/Cursos Development/Proyects/portfolio",
     "jsx": "react-jsx",
+    "baseUrl": ".",
     "paths": {
       "@layouts/*": ["./src/layouts/*"],
       "@i18n/*": ["./src/i18n/*"],
